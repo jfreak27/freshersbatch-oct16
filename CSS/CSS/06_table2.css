@@ -1,0 +1,19 @@
+
+
+	html{
+
+		font-family: candara;
+	}
+
+	table, th, td{
+
+		border: 1px solid green;
+			
+	}
+
+	th{
+
+		background-color: green;
+		color: white;
+	}
+

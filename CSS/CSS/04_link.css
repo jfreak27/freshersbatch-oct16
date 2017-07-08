@@ -1,0 +1,22 @@
+
+
+	html{
+
+		background-color: rgb(224,255,255);
+		font-family: candara;
+	}
+
+	a {
+
+		color: red; 
+	}
+
+	a: visited{
+
+		color: yellow;
+	}
+
+	a:hover{
+
+		color: black;
+	}
