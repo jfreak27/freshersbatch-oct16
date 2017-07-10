@@ -8,7 +8,7 @@ function generate_table()
 	var i = 1;
 
 	
-	//var multiplier = [1,2,3,4,5,6,7,8,9];
+	
 	var product = [];
 
 	for (i=1;i<=10;i++)
@@ -23,7 +23,7 @@ function generate_table()
 
 
 	for(i=1;i<=10;i++){
-		//document.write(num+" x "+i+" = "+product[i]+"<br>");
+	
 
 		var node = document.createElement("p");
 		var textnode = document.createTextNode(num+" x "+i+" = "+product[i]);
