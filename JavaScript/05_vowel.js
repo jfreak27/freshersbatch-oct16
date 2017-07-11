@@ -1,6 +1,6 @@
 function check_vowel(){
 
-	var alpha = document.getElementById("alphabet").value;
+	var alpha = document.getElementById("alphabet").value.toLowerCase();
 	var msg;
 	
 	if(alpha=='a' || alpha=='e'| alpha=='i' || alpha=='o' || alpha=='u')
