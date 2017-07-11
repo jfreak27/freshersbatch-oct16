@@ -1,0 +1,44 @@
+#container {
+  height: 400px;
+  width: 400px;
+  position: relative;
+}
+#image {
+  position: absolute;
+  left: 0;
+  top: 147;
+}
+#img_text_head {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  left: 28%;
+  top: 400px;
+  font-family: californian fb;
+}
+
+
+#img_text_sub {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  font-weight: lighter;
+  left: 35%;
+  top: 450px;
+  font-family: californian fb;
+}
+
+#text_container {
+ 	z-index: 100;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-weight:normal;
+  
+  top: 850px;
+  font-family: californian fb;
+
+}
