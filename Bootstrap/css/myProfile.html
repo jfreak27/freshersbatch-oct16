@@ -5,6 +5,12 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type = "text/css" href="animate.css">
+    <script type="text/javascript" src="wow.js"> </script>
+
+    <script> 
+      new WOW().init();
+    </script>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
@@ -17,90 +23,318 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
 
-   <div class="navbar-header">
+      <div class="navbar-header">
   
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-       <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span> 
       </button>
     
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+      </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
     
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#">home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li> 
-        <li><a href="#">Page 3</a></li> 
-      </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#">home</a></li>
+            <li><a href="#image2">About Me</a></li>
+            <li><a href="#image3">Portfolio</a></li> 
+            <li><a href="#image4">Contact</a></li> 
+          </ul>
 
+        </div>
+      </div>
+  </nav>
+
+
+  <div class="jumbotron" style="padding-bottom: 0px; margin-bottom: 0px;">
+    <div class="container-fluid " style="padding-bottom: 0px">
+      <h1 class=" wow fadeInLeft " style="margin: 0px; padding: 0px">iam<b>aditya</b>khare</h1>      
+      <p class=" wow fadeInLeft " style="animation-delay: 0.1s; margin: 0px; padding-bottom: 0px">things<b>i</b>am<b>not</b> | developer | creative | gamer</p>
     </div>
   </div>
-</nav>
-<div class="jumbotron" style="padding-bottom: 0px; margin-bottom: 0px;">
-<div class="container-fluid" style="padding-bottom: 0px">
-    <h1 style="margin: 0px; padding: 0px">iam<b>aditya</b>khare</h1>      
-    <p style="margin: 0px; padding-bottom: 0px">things<b>i</b>am<b>not</b> | developer | creative | gamer</p>
-  </div>
-</div>
 
 
-  <img id="image" src="bckgrnd.jpg" style="width: 100% ; height: 100%"  />
-  <p id="img_text_head">
+   <img id="image1" src="bckgrnd.jpg" style="width: 100% ; height: 100%"  />
+  <p id="img_text_head" class="wow fadeInDown">
     you, me & a world to see
   </p>
- <p id="img_text_sub">
+  <p id="img_text_sub" class="wow fadeIn">
     adventures of a young man in modern world
   </p>
   
   <div id ="text_container"> 
-  <div class = "container" style="margin:0px; margin-left: 80px ">
-  <div class="row">
-        <div class="col-md-4">
-
-        <div class="subtitle">.: who i am</div>
-        <hr>
-        <img src = "whoIAm.jpg" width="100%" class = "img-rounded" style="margin-bottom: 10px"> 
-        <p id = "whowhatwhere" class="text-left"> At heart, I'm a Renaissance man. Like Leonardo da Vinci, but with more adult jokes. Or Colbert, sans free mockery. And it all started in tenth grade. The year we got cable.   </p>
-        <button class="button"><span> know more</span> </button>
 
 
+      <div class = "quote wow slideInDown"> On a mission to do big things with amazing people, starting at the intersection of passion x purpose. 
+      </div>
 
+
+      <hr class = "style14">
+
+      <div class = "space"> 
+      </div>
+
+
+      <div class = "container  wow fadeIn" style="margin:0px; margin-left: 80px ">
+        <div class="row">
+          <div class="col-md-4">
+
+            <div class="subtitle">.: who i am</div>
+             <hr>
+             <div class = "wow fadeInDown" style="animation-delay: 0.1s"><img src = "whoIAm.jpg" width="100%" class = "img-rounded" style="margin-bottom: 10px"> 
+              <p id = "whowhatwhere" class="text-left"> At heart, I'm a Renaissance man. Like Leonardo da Vinci, but with more adult jokes. Or Colbert, sans free mockery. And it all started in tenth grade. The year we got cable.   </p>
+              <a href="#image2"><button class="subtitle_btn" > Say What? </button></a>
+              </div>
+            </div>
+            
+            <div class="col-md-4">
+
+              <div class="subtitle">.: what i do</div>
+              <hr>
+              <div class = "wow fadeInDown"  style="animation-delay: 0.2s"><img src = "whatIDo.jpg" width="100%" class = "img-rounded" style="margin-bottom: 10px"> 
+              <p id = "whowhatwhere"> So what does it mean to do big things with amazing people? See my work in technology, community, and social impact for a sneak peak.  </p>
+               <a href="#image3"><button class="subtitle_btn"> See My Portfolio </button></a>
+              </div>
+            </div>
+        
+            <div class="col-md-4">
+              <div class="subtitle">.: where to find me</div>
+              <hr>
+              <div class = "wow fadeInDown"  style="animation-delay: 0.3s"><img src = "whereToFindMe.jpg" width="100%" class = "img-rounded" style="margin-bottom: 10px"> 
+              <p id = "whowhatwhere"> You can usually find me roaming the streets of San Francisco, or one of the world's other urban jungles. Best reached via voicemail or carrier pigeon. </p>
+              <a href="#image4"> <button class="subtitle_btn"> Send a carrier pigeon </button></a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-md-4">
+        <br> 
 
-        <div class="subtitle">.: what i do</div>
-        <hr>
-        <img src = "whatIDo.jpg" width="100%" class = "img-rounded" style="margin-bottom: 10px"> 
-        <p id = "whowhatwhere"> So what does it mean to do big things with amazing people? See my work in technology, community, and social impact for a sneak peak.  </p>
-
-
-
-
-
-
+        <div class="space"> 
         </div>
-        <div class="col-md-4">
+
+        <hr class="style14" >
+
+        <div style="padding-bottom: 30px"> </div>
+
+          <div class="container">
+            <div class = "row">
+             <div class = "col-md-8">
+
+              <div class = "space" style="padding-bottom: 25px"> </div>
+                <blockquote class="blockquote ">
+                <p class="mb-0 wow fadeIn"><i>"With no structure and little guidance, Aditya dove in to help launch products like YouTube Donation Cards, working with numerous teams on a tight timeline to develop content with an incredible story for nonprofits." </i> 
+                </p>
+                <footer class="blockquote-footer wow fadeIn" style="animation-delay: 0.2s">George Hamilton | <cite title="Source Title">Google for   Nonprofits  </cite>
+                </footer>
+                </blockquote>
+              </div>
+
+              <div class = "col-md-4 feature wow pulse" style="padding-left: 100px; animation-delay: 0.1s"> 
+                <b> Featured In </b> 
+                  <div style="padding: 2px; padding-left: 0px; padding-top: 15px;"> <a href="https://www.washingtonpost.com/" style="text-decoration: none; color: dimgrey">  Washington Post </a></div>
+                  <div style="padding: 2px; padding-left: 0px"><a href="https://www.medium.com/" style="text-decoration: none; color: dimgrey"> Medium </a>
+                  </div>
+                  <div style="padding: 2px; padding-left: 0px"> <a href="https://www.huffingtonpost.com/" style="text-decoration: none; color: dimgrey"> Huffington Post </a>
+                  </div>
+                  <div style="padding: 2px; padding-left: 0px"> <a href="https://www.recode.net//" style="text-decoration: none; color: dimgrey"> Recode </a>
+                  </div>
+                  <div style="padding: 2px; padding-left: 0px"> <a href="https://youtube.googleblog.com/" style="text-decoration: none; color: dimgrey"> YouTube Blog </a>
+                  </div>
+                  <div style="padding: 2px; padding-left: 0px"> <a href="http://www.business-standard.com/" style="text-decoration: none; color: dimgrey"> Business Standard India </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <hr class="style14" style="margin-top: 100px;">
+        </div>
+
+        <a id="aboutme1"> </a>
+        <div id = "text_container_about">
+          
+          <img id="image2" src="about_bckgrnd.jpg" style="width: 1349px ; height: 613px"  />
+          <p id="img_text_aboutme" class="wow fadeIn">
+            about me
+          </p>
+
+          <p> 
+          <div class = "space"> </div>
+          <div class = "space"> </div>
+          <div class = "container" style="margin:0px; margin-left: 80px ">
+            <div class="row">
+              <div class="col-md-5">
+                <img class = "self" src="me.jpg"> 
+                <img class = "self" src="self_img_2.jpg" style="width:400px; height: 300px; margin-top: 100px;"> 
+              </div>
+
+              <div class = "col-md-7 ">
+                
+                <p class = "aboutMeHead wow fadeInLeft"> Hello There! I'm Aditya. </p>
+
+                <p class="aboutme wow fadeInLeft" style="animation-delay: 0.2s">And I'm a big believer that "hello" should be extraordinary. I like big, audacious problems; ideas with intention; and stacks of pancakes that exceed the serving size on the back of the box. I believe in pursuing dreams with gumption, in making a meaningful difference. Because impact is at the core of who I am & what I do.
+                </p>
+
+                <p class="aboutme wow fadeInLeft" style="animation-delay: 0.4s"> I'm a maker and a storyteller. A Renaissance man whose magic lies in moxie (n.) -- a boldness of spirit & limitless possibility. but with more adult jokes. Or Colbert, sans free mockery. And it all started in tenth grade. The year we got cable.
+                </p>
+                <p class="aboutme wow fadeInLeft" style="animation-delay: 0.6s">
+                Wait, what? Yep. It all goes back to 10th grade, when I had to choose one elective class: art or science. Instead, I penciled in a new box & chose "both." (Note to self: That's considered bad-mannered, not badass, in 10th grade.) So I was given detention. Turns out though, detention was one of the best things that ever happened to me. Because I spent all 46 minutes convincing the principal to let me take both art & science. And it was then that I became wholly & irrevocably -- me.
+                </p>
+
+                <blockquote class="blockquote wow fadeIn" style="color:#191919">
+                <p class="mb-0"><i> “I like people who dream BIG. And dance like they mean it. Because otherwise, why bother (really?)” </i> 
+                </p> </blockquote>
+
+
+                <p class="aboutme wow fadeInRight" style="animation-delay: 0.2s">
+                As a homegrown Maharashtrian & Nagpur University alum, my life's work is rooted at the intersection of passion x purpose. Between technology, community, and social impact. I like boots made for walking and dresses made for doing. I like people who dream BIG. And dance like they mean it. Because otherwise, why bother (really?)
+                </p>
+
+
+                <p class="aboutme wow fadeInRight" style="animation-delay: 0.4s">
+                I'm a creative storyteller with strikingly diverse experiences, having worked at companies ranging in size, scope, and mission. My background is in bold product marketing and product management. Which is the TL;DR way of saying I'm the "super glue” between business & technical teams. My superpowers are multi-faceted. I'm really good at making PB&Js, embracing awkward moments, and notably -- leading people to translate ideas to action. Weaving a compelling narrative along the way.
+                </p>
+
+
+                <p class="aboutme wow fadeInDown" style="animation-delay: 0.2s">
+                So this is my story. And it's only just beginning. 
+                </p>
+
+                <button class="subtitle_btn" style="margin-left: 550px; "> Contact Me </button>
+                
+              </div> 
+            </div>
+          </div>
+          <br>
+          <br>
+          <hr class="style14">
+          
+          <br>
+          <p class="aboutMeHead wow fadeIn" style="padding-left: 100px;"> Adventures as of Late </p>
+
+          <div class = "container" style="margin:0px; margin-left: 100px ">
+            <div class="row" >
+              <div class="col-md-4">
+                <img class = "pic-grid img-responsive center-block wow rotateInDownLeft"  src="advent1.jpg"> 
+              </div>
+              <div class="col-md-4">
+                <img class = "pic-grid img-responsive center-block wow fadeInDown" src="advent2.jpg"> 
+              </div>
+              <div class="col-md-4">
+                <img class = "pic-grid img-responsive center-block wow rotateInDownRight" src="advent3.jpg"> 
+              </div>
+            </div>
+            <br>           
+            <div class="row" >
+              <div class="col-md-4" >
+                <img class = "pic-grid img-responsive center-block wow rotateInUpLeft"  src="advent4.jpg"> 
+              </div>
+              <div class="col-md-4">
+                <img class = "pic-grid img-responsive center-block wow fadeInUp" src="advent5.jpg"> 
+              </div>
+              <div class="col-md-4">
+                <img class = "pic-grid img-responsive center-block wow rotateInUpRight"  src="advent6.jpg"> 
+              </div>
+            </div>
+
+          </div>
+          <br>
+          <hr class = "style14">
+          
+          <div id = "text_container_portfolio">
+              <img id="image3" src="portfolio_bckgrnd2.jpg" style="width: 100%; height: 100%"  />
+              <p id="img_text_portfolio" class="wow fadeInDown">
+                   Portfolio
+              </p>
+              <br>
+              <br>
+
+              <div class="space"> </div>
+              <div class="space"> </div>
+              <hr class="style14">
+              <br>
+              <br>
+              <p class="aboutMeHead" style="padding-left: 100px;"> My Work : The Long Story, In Short </p>
+              <br>
+
+              <div class = "container" style="margin:0px; margin-left: 100px ">
+                <div class="row" >
+                  <div class="col-md-4">
+                    <br>
+                    <p class = "wow fadeInDown" style="font-family: georgia; font-size: 24px; text-align: center;" > <i>Creating Community</i> </p>
+                    <p class = "aboutme wow fadeIn" style="text-align: justify; animation-delay: 0.1s"> There's a certain magic in realizing that we're all cut from the same cloth -- not a cut above or below one another. So from inviting thousands of strangers to have dinner together to connecting nonprofits with volunteers, my life's work is in building a community greater than the sum of its parts. </p>
+                  </div>
+                  <div class="col-md-4">
+                    <br>
+                    <p class = "wow fadeInDown" style="font-family: georgia; font-size: 24px;  text-align: center;"> <i>Leveraging Technology</i> </p>
+                    <p class = "aboutme wow fadeIn" style="text-align: justify;  animation-delay: 0.1s"> "Technology matters because it is inseparable from being human," writes David Nye. I fell in love with technology for its ability to impact humanity. Pure and simple. Because whether it's a product or a service or a "hello" world, technology is essential in empowering people to solve the problems that matter most.  </p>
+                  </div>
+                  <div class="col-md-4">
+                    <br>
+                    <p class = "wow fadeInDown"  style="font-family: georgia; font-size: 24px;  text-align: center;"> <i>Driving Social Impact </i> </p>
+                    <p class = "aboutme wow fadeIn" style="text-align: justify;  animation-delay: 0.1s"> Impact is the oxygen of what I do -- the life blood. I care deeply that what I do matters in this world. And that it's all about the people. Whether it's creating a product to bolster youth wellness or transforming a mom and pop shop's opportunities, my mission to drive positive social change remains paramount.   </p>
+                  </div>
+                </div>
+              </div>
+
+              <div style="padding-top: 40px;"> </div>
+              <hr class = "style14">
+              <div style="padding-bottom: 40px;"> </div>
+
+              <div class = "container wow fadeIn" style="margin:0px; margin-left: 100px ">
+                <div class="row" >
+                  <div class="col-md-6">
+                    <p class = "aboutMeHead" style="font-size: 24px"> Brand Transformation: Doctors Without Borders </p>
+                    <p class = "aboutme" style="text-align: justify"> As a special initiative for strategy firm SYPartners, I created a proposal to transform <a href = "http://www.doctorswithoutborders.org/" style="text-decoration: none; color: black;"><b> Doctors Without Borders' </b></a> brand. I led the way in identifying core truths, challenges, and opportunities. Then, I created a game plan to activate strategy, outlining how to scale & transform Doctors Without Borders into an innovative humanitarian brand. </p>
+
+                  </div>
+                  <div class="col-md-6">
+                    <p class = "aboutMeHead" style="font-size: 24px"> Digital Marketing Strategy: Google for Nonprofits </p>
+                    <p class = "aboutme" style="text-align: justify"> In working on G4NP's digital marketing, I helped create, curate, and execute cross-functional messaging. I was responsible for creating a consistent narrative across all digital media, infusing the Google voice at each touch point. This involved hand-in-hand collaboration with internal & external creative, product, legal, & communications. </p>
+
+                  </div>
+                </div>
+              </div>
+              <div class = "space"></div>
+              <hr class = "style14">
+          </div>
+          <hr class = "style14">
+          <div id = "text_container_contact">
+              <img id="image4" src="contact_bckgrnd3.jpg" style="width: 100%; height: 100%"  />
+              <p id="img_text_contact" class="wow fadeInDown">
+                   Contact Me
+              </p>
+              <div class="space"></div>
+              <div class="space"></div>
+              <div style="padding-bottom: 50px"> </div>
+              <p class="aboutMeHead wow fadeIn" style="padding-left: 115px;">Contact</p>
+              <div class = "container wow fadeIn " style="margin:0px; margin-left: 100px; animation-delay: 0.1s">
+                <div class="row" >
+                  <div class="col-md-3">
+                   <p class = "aboutme" style="text-align: justify"> You can usually find me roaming the streets of Pune, or one of the world's other urban jungles. Looking for edible perspective and finding the world's greatest awkward moments instead. Always with coffee in hand. I'm a big believer that great ideas are borne of great conversations, so you're welcome to say hello here or drop me a line at <a href = "mailto:adityakhare@creativemind.com" style="text-decoration: none; color:black"> <b>adityakhare@creativemind.com</b></a> or at <a href = "linkedin.com/adityakhare" style="text-decoration: none; color:black"> <b>linkedin.com/adityakhare</b></a> </p>
+                  </div> 
+                </div>
+              </div>
+              <div style="padding-bottom:50px"> </div>
+           
+            
+              <hr class= "style14">
+              <p class = "aboutme" style="text-align: justify; text-align: center;"> &copy; Aditya Khare, 2017 </p>
+              <div style="padding-bottom:50px"> </div>
+
+            </div>
+
+
+
+
+
+
+
+          </div>
+
+
+
           
 
-       <div class="subtitle">.: where to find me</div>
-        <hr>
-        <img src = "whereToFindMe.jpg" width="100%" class = "img-rounded" style="margin-bottom: 10px"> 
-        <p id = "whowhatwhere"> You can usually find me roaming the streets of San Francisco, or one of the world's other urban jungles. Best reached via voicemail or carrier pigeon. </p>
+      
 
-
-
-
-
-        </div>
-  </div>
-  </div>
-  </div>
- 
-
-
-
-
-
+</html>
 
