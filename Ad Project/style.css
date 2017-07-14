@@ -70,12 +70,13 @@ body{
 .login-page > .form button:hover,.form button:active,.form button:focus {
   background: #0058a3;
 }
-.login-page >.form input {
+.login-page >.form input,textarea {
  
   outline: 0;
-  background: #f2f2f2;
+ 
   width: 100%;
-  border: 0;
+  border: 1px solid silver;
+  border-radius: 5px;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
@@ -114,4 +115,210 @@ body{
 }
 
 
+
+#myFooter {
+	background-color: #373a48;
+	color:white;
+}
+
+#myFooter .footer-copyright{
+	background-color: #383737;
+	padding-top:3px;
+	padding-bottom:3px;
+	text-align: center;
+}
+
+#myFooter .footer-copyright p{
+	margin:10px;
+	color: #ccc;
+}
+
+#myFooter ul{
+	list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+
+}
+
+#myFooter h5{
+	font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter a{
+	color:#d2d1d1;
+	text-decoration: none;
+}
+
+#myFooter a:hover, #myFooter a:focus{
+	text-decoration: none;
+	color:white;
+}
+
+#myFooter .myCols{
+	text-align: center;
+}
+
+#myFooter .social-networks{
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 38px;
+}
+
+#myFooter .social-networks a{
+    font-size: 32px;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #f9f9f9;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+#myFooter .social-networks a:hover{
+	text-decoration: none;
+
+}
+
+#myFooter .facebook:hover{
+	color:#0077e2;
+}
+
+#myFooter .google:hover{
+	color:#ef1a1a;
+}
+
+#myFooter .twitter:hover{
+	color: #00aced;
+}
+
+@media screen and (max-width: 767px){
+	#myFooter {
+		text-align: center;
+	}
+}
+
+
+
+/* CSS used for positioning the footers at the bottom of the page. */
+/* You can remove this. */
+
+
+html{
+	height: 100% !important;
+}
+
+body{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+.content{
+	flex: 1 0 auto;
+	-webkit-flex: 1 0 auto;
+	min-height: 200px;
+}
+
+#myFooter{
+	flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+}
+
+
+
+.adGrid{
+
+	margin-bottom: 20px;
+
+}
+
+.adGrid .row{
+
+	border: 1px solid #EBEBEC;
+
+
+	
+
+}
+
+.adGrid .row:hover{
+
+	background-color: #f9f9f9;
+	box-shadow: 0px 1px 25px -10px rgba(0,0,0,0.75)
+
+}
+
+.adGrid a{
+
+	text-decoration: none;
+}
+
+.col-md-2 > img{
+
+	margin-top: 5px;
+	width:144px ; 
+	height: 108px;
+
+}
+
+
+.editAdImgGrid>div>div>img{
+
+	
+	width:144px ; 
+	height: 108px;
+
+}
+
+
+.adGridContainer{
+
+	margin-left: 100px;
+	margin-right: 100px; 
+	font-size: 18px;
+}
+.adGridHeader{
+
+	padding-top: 5px;
+	font-weight: bold;
+
+
+}
+
+
+.adGridDesc{
+
+	font-size: 16px;
+	color: black;
+}
+
+.adGridCategory{
+
+	font-size: 12px; 
+	color: darkgrey;  
+	margin-bottom: 0px;
+}
+
+.adGridDatePosted{
+
+	font-size: 12px;
+	color: darkgrey; 
+	margin-top: 0px; 
+	margin-bottom: 0px; 
+}
+
+
+.adGridPrice{
+
+
+	text-align: center; 
+	padding-top: 30px; 
+	font-weight: bolder; 
+	font-size: 22px;
+	color: black;
+}
 
