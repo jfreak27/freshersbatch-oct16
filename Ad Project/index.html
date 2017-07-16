@@ -50,27 +50,27 @@
         							<div class = "container-fluid" style="padding-top: 10px;" > 
         								<div class = "row text-center" style="padding-bottom: 10px;">
         									<div class = "col-md-2">  
-        										<a id="categoryLink" href="#"> <img src="icons/car.png"> 
+        										<a id="categoryLink" href="adGrid.html"> <img src="icons/car.png"> 
         										<p> Car & Bikes  <br> &nbsp; </p> </a>
         									</div>
         									<div class = "col-md-2"> 
-        										<a id="categoryLink" href="#"> <img src="icons/clothing.png">
+        										<a id="categoryLink" href="adGrid.html"> <img src="icons/clothing.png">
         										<p> Clothing & Fashion </p> </a>
         									</div>
         									<div class = "col-md-2"> 
-        										<a id="categoryLink" href="#"> <img src="icons/furniture.png"> 
+        										<a id="categoryLink" href="adGrid.html"> <img src="icons/furniture.png"> 
         										<p> Furniture & Households</p> </a>
         									</div>
         									<div class = "col-md-2"> 
-        										<a id="categoryLink" href="#"> <img src="icons/laptop.png"> 
+        										<a id="categoryLink" href="adGrid.html"> <img src="icons/laptop.png"> 
         										<p> Computers & Laptops </p> </a>
         									</div>
         									<div class = "col-md-2"> 
-        										<a id="categoryLink" href="#"> <img src="icons/house.png"> 
+        										<a id="categoryLink" href="adGrid.html"> <img src="icons/house.png"> 
         										<p> House & Rentals </p> </a>  
         									</div>
         									<div class = "col-md-2"> 
-        										<a id="categoryLink" href="#"> <img src="icons/mobile.png"> 
+        										<a id="categoryLink" href="adGrid.html"> <img src="icons/mobile.png"> 
         										<p> Mobile & Electronics </p> </a>
         									</div>
         									
@@ -84,6 +84,7 @@
        							<input type="text" class="form-control form-control-no-border" placeholder="What are you looking for?" style="width:400px; ">
         						<div class="input-group-btn">
          							<button class="btn btn-default" type="submit" style=" background-color:#337ab7; color:white; width:60px; "><i class="glyphicon glyphicon-search"></i></button>
+                       <a data-toggle="modal" data-target="#advancedSearchModal"><buton class = "btn btn-default">Advanced <i class="glyphicon glyphicon-search"></i></buton></a>
         							</div>
       						</div>
     					  </form>
@@ -125,11 +126,11 @@
   		</div>
 	</div>
 	<br>
-	<div class = "container-fluid adGridContainer" > 
+	<div class = "container-fluid adGridContainer"> 
 		<p style="padding-bottom: 0px;"> Featured Ads <hr style="padding-top: 10px; margin-top: 0px;"></p>
 
-		<div class = "container-fluid adGrid"> 
-			<a href= "#"> 
+		<div class = "container-fluid adGrid" style="margin-top: 30px;"> 
+			<a href= "adPage.html"> 
 			<div class = "row"> 
 				<div class ="col-md-2">
 					<img src = "images/feat_mitsu.jpg" alt="Replace by Server Image">
@@ -146,7 +147,7 @@
 				</div>
 			</div>
 			</a>
-			<a href= "#">
+			<a href= "adPage.html">
 			<div class = "row"> 
 				<div class ="col-md-2">
 					<img src = "images/feat_mitsu.jpg" alt="Replace by Server Image">
@@ -163,7 +164,7 @@
 				</div>
 			</div>
 			</a>
-			<a href=" #">
+			<a href="adPage.html">
 			<div class = "row"> 
 				<div class ="col-md-2">
 					<img src = "images/feat_mitsu.jpg" alt="Replace by Server Image">
@@ -230,58 +231,97 @@ Bangalore - 560068 </p>
         </div>
     </footer>
 
+
   <!--My Account Modal -->
-  	<div id="myAccountModal" class="modal fade" role="dialog">
-    	<div class="modal-dialog" style="width: 1000px;">
-    <!-- Modal content-->
-      		<div class="modal-content">
-        		<div class="modal-header">
-          			<button type="button" class="close" data-dismiss="modal">&times;</button>
-          				<h4 class="modal-title">Login to your XorAds account</h4>
-        				</div>
-       					<div class="modal-body" style="padding-left: 0px;" >
-          				<div class="login-page" style="margin-left:100px; margin-right: 100px; padding-top: 30px;">
-            				<div class="form" style="width: 800px; margin-bottom: -10px;">
-              				<div class="container-fluid" >
-                				<div class = "row" >
-                  				<div class = "col-md-5">
-                    				<form class="login-form";">
-                    				<p style="font-size: 18px; text-align: center; margin-bottom: 0px;"> Login </p>
-                    				<hr style="margin-bottom: 15px; margin-top: 10px;">
-                    				<input type="text" placeholder="Username"/>
-                    				<input type="password" placeholder="Password"/>
-                    				<button>login</button>
-                    				</form>
-                  				</div>
-                  				<div class = "col-md-2 text-center" style="align-content: left; padding-left: 0px;"> 
-                    				 <p style="text-align: center;margin-bottom: 0px;margin-left: 30px;""> OR </p><img src="images/vertical-line.png" style="height: auto; font-weight: auto;"> 
-                  				</div>
-                  				<div class = "col-md-5">
-                    				<form class="register-form">
-                    				<p style="font-size: 18px; text-align: center;"> Sign up </p>
-                    				<hr style="margin-bottom: 15px; margin-top: 10px;">
-                    				<input type="text" placeholder="First Name"/>
-                    				<input type="text" placeholder="Last Name"/>
-                    				<input type="text" placeholder="Username"/>
-                    				<input type="password" placeholder="Password"/>
-                    				<input type="text" placeholder="Email Address"/>
-                    				<input type="text" placeholder="Phone"/>
-                    				<button>create</button>
-                    				<div style="padding-bottom: 30px;"> </div>
-                    				</form>
-                  				</form>
-                				</div>
-              				</div>
-            				</div>
-          				</div>
-        				</div>
-        				<div class="modal-footer">
-        				</div>
-      				</div>
-    				</div>
-  				</div>
+    <div id="myAccountModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" style="width: 1000px;">
+          <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Login to your XorAds account</h4>
+            </div>
+            <div class="modal-body" style="padding-left: 0px;" >
+              <div class="login-page" style="margin-left:100px; margin-right: 100px; padding-top: 30px;">
+                <div class="form" style="width: 800px; margin-bottom: -10px;">
+                  <div class="container-fluid" >
+                    <div class = "row" >
+                      <div class = "col-md-5">
+                        <form class="login-form">
+                          <p style="font-size: 18px; text-align: center; margin-bottom: 0px;"> Login </p>
+                          <hr style="margin-bottom: 15px; margin-top: 10px;">
+                          <input type="text" placeholder="Username" class="form-control"/>
+                          <input type="password" placeholder="Password" class="form-control"/>
+                          <button>login</button>
+                        </form>
+                      </div>
+                      <div class = "col-md-2 text-center" style="align-content: left; padding-left: 0px;"> 
+                        <p style="text-align: center;margin-bottom: 0px;margin-left: 30px;""> OR </p><img src="images/vertical-line.png" style="height: auto; font-weight: auto;"> 
+                      </div>
+                      <div class = "col-md-5">
+                        <form class="register-form">
+                          <p style="font-size: 18px; text-align: center;"> Sign up </p>
+                          <hr style="margin-bottom: 15px; margin-top: 10px;">
+                          <input type="text" placeholder="First Name" class="form-control"/>
+                          <input type="text" placeholder="Last Name" class="form-control"/>
+                          <input type="text" placeholder="Username" class="form-control"/>
+                          <input type="password" placeholder="Password" class="form-control"/>
+                          <input type="text" placeholder="Email Address" class="form-control"/>
+                          <input type="text" placeholder="Phone" class="form-control"/>
+                          <button>create</button>
+                          <div style="padding-bottom: 30px;"> 
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+      </div>
+    </div>
 
 
+
+
+    <div id="advancedSearchModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" style="width: 500px;">
+          <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Advanced Search</h4>
+            </div>
+            <div class="modal-body" style="padding-left: 0px;" >
+              <div class="login-page" style="margin-left:50px; margin-right: 50px; padding-top: 10px;">
+                <div class="form" style="width: 400px; margin-bottom: -10px;">
+                  <form class="login-form">
+                    <input type="text" placeholder="Search by Text" class="form-control"/>
+                    <div class="form-group">
+                    <input type="text" placeholder="Search by User" class="form-control"/>
+                    <div class="form-group">
+                    <input type="text" placeholder="Search by Date" class="form-control"/>
+                    <div class="form-group">
+                      <select class="form-control" id="sel1">
+                        <option selected disabled>Select from Category</option>
+                        <option>Cars & Bikes</option>
+                        <option>Clothing & Fashion</option>
+                        <option>Furniture & Households</option>
+                        <option>Computers & Laptops</option>
+                        <option>House & Rentals</option>
+                        <option>Mobiles & Electronics</option>
+                      </select>
+                    </div>
+                    <button style="margin-bottom: 20px;">Search!</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+          
 
 
 
