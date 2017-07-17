@@ -117,9 +117,10 @@
               
               
               Add some images <input type="file" id="imgInp" style="margin-bottom: 10px;">
-              <span class="alert alert-warning" style="font-size: 11px; padding: 5px; margin: 70px; margin-bottom: 20px;">
+              <span><a href=""> <i class = "glyphicon glyphicon-plus-sign"></i> Add Images </a></span> 
+              <div class="alert alert-warning" style=" text-align: center; font-size: 11px; padding: 5px; margin: 5px; margin-bottom: 20px;">
                 Ads with <strong> images </strong> attract more attention! 
-              </span>
+              </div>
               
               
               <button style="margin-top: 30px;">Create my ad!</button>
@@ -168,9 +169,9 @@ Bangalore - 560068 </p>
             </div>
         </div>
         <div class="social-networks" style="padding-top: 10px; padding-bottom: 5px;">
-            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
-            <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+            <a href="https://twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="https://facebook.com" class="facebook"><i class="fa fa-facebook-official"></i></a>
+            <a href="https://plus.google.com" class="google"><i class="fa fa-google-plus"></i></a>
         </div>
         <div class="footer-copyright">
             <p>© XorAds Solutions Pvt. Ltd., 2017 </p>
@@ -230,7 +231,7 @@ Bangalore - 560068 </p>
 
 
 
-    <div id="advancedSearchModal" class="modal fade" role="dialog">
+     <div id="advancedSearchModal" class="modal fade" role="dialog">
       <div class="modal-dialog" style="width: 500px;">
           <div class="modal-content">
             <div class="modal-header">
@@ -242,21 +243,39 @@ Bangalore - 560068 </p>
                 <div class="form" style="width: 400px; margin-bottom: -10px;">
                   <form class="login-form">
                     <input type="text" placeholder="Search by Text" class="form-control"/>
-                    <div class="form-group">
-                    <input type="text" placeholder="Search by User" class="form-control"/>
-                    <div class="form-group">
+                    <input type="text" placeholder="Search by User" class="form-control"/>                    
                     <input type="text" placeholder="Search by Date" class="form-control"/>
-                    <div class="form-group">
-                      <select class="form-control" id="sel1">
-                        <option selected disabled>Select from Category</option>
+                    <div class = "container" style="width:400px;">
+                      <div class = "row">
+                        <div class = "col-md-6" style="padding-left: 0px;">
+                        <input type="text" placeholder="Search from Date" class="form-control"/>
+                        </div>
+                        <div class = "col-md-6"  style="padding-right: 0px;">
+                        <input type="text" placeholder="Search to Date" class="form-control"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class = "form-group">
+                      <select class="form-control" id="selectCategory">
+                        <option>All Categories</option>
                         <option>Cars & Bikes</option>
                         <option>Clothing & Fashion</option>
                         <option>Furniture & Households</option>
                         <option>Computers & Laptops</option>
                         <option>House & Rentals</option>
                         <option>Mobiles & Electronics</option>
+
                       </select>
                     </div>
+                    <div class = "form-group">
+                      <select class="form-control" id="sortResult">
+                        <option>Price : Low to High</option>
+                        <option>Price : High to Low</option>
+                        <option>Popularity : Low to High</option>
+                        <option>Popularity : High to Low</option>
+                      </select>
+                    </div>
+                   
                     <button style="margin-bottom: 20px;">Search!</button>
                   </form>
                 </div>

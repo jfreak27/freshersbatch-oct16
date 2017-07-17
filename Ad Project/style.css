@@ -7,7 +7,24 @@ body{
 	font-family: 'Open Sans', sans-serif;
 }
 
+.pagination {
+    display: inline-block;
+}
 
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: #337ab7;
+    color: white;
+}
+.pagination a:hover:not(.active) {background-color: #ddd;}
 .dropbtn {
     background-color: white;
     color: #337ab7;
@@ -271,7 +288,7 @@ body{
 }
 
 
-.editAdImgGrid>div>div>img{
+.editAdImgGrid > div > div > img{
 
 	
 	width:144px ; 
@@ -279,7 +296,7 @@ body{
 
 }
 
-.imgGrid >div >div >img{
+.imgGrid > div > div > img{
 
     margin-top: 20px;
     width: 144px; 
@@ -300,11 +317,13 @@ body{
   margin-right: 100px;
 }
 
-.adImgDisp{
+.adImgDisp > div >img{
+
 
   width:300px;
+  margin: auto;
 
-  height:300px; 
+  height:400px !important
 }
 
 .adDetTitle{
@@ -359,6 +378,15 @@ body{
 	color: darkgrey; 
 	margin-top: 0px; 
 	margin-bottom: 0px; 
+}
+
+.adGridPostId{
+
+  font-size: 12px;
+  color: black; 
+
+  margin-top: 0px; 
+  margin-bottom: 0px; 
 }
 
 

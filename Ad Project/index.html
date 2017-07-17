@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="hover.css">
   
-
   <link href="https://fonts.googleapis.com/css?family=Lato|Magra|Noto+Sans|Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+    <meta http-
 </head>
 
 
@@ -31,7 +33,7 @@
       			<ul class="nav navbar-nav navbar-right">
         			
       				<li style="margin-top: 8px; margin-right: 10px;"> <button type="button" class="btn btn-primary"><a href="postAd.html" style="text-decoration: none; color:white;">Post Ad for Free!</a></button> </li>
-        			<li style="padding-right: 15px;"><a data-toggle="modal" data-target="#myAccountModal" style="cursor: pointer"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        			<li style="padding-right: 15px;"><a data-toggle="modal" data-target="#myAccountModal" style="cursor: pointer"><span class="glyphicon glyphicon-user "></span> Your Account</a></li>
         			
      			 </ul>
     		</div>
@@ -141,6 +143,7 @@
 						<p class = "adGridDesc"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						<p class = "adGridCategory"> Category </p>
 						<p class = "adGridDatePosted"> Date Posted </p>
+            <p class = "adGridPostId"> #postId  </p>
 				</div>
 				<div class = "col-md-2">
 					<p class = "adGridPrice"> Price </p>
@@ -158,13 +161,14 @@
 						<p class = "adGridDesc"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						<p class = "adGridCategory"> Category </p>
 						<p class = "adGridDatePosted"> Date Posted </p>
+            <p class = "adGridPostId"> #postId  </p>
 				</div>
 				<div class = "col-md-2">
 					<p class = "adGridPrice"> Price </p>
 				</div>
 			</div>
 			</a>
-			<a href="adPage.html">
+			<a href="adPage.html ">
 			<div class = "row"> 
 				<div class ="col-md-2">
 					<img src = "images/feat_mitsu.jpg" alt="Replace by Server Image">
@@ -175,6 +179,7 @@
 						<p class = "adGridDesc"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						<p class = "adGridCategory"> Category </p>
 						<p class = "adGridDatePosted"> Date Posted </p>
+            <p class = "adGridPostId"> #postId  </p>
 				</div>
 				<div class = "col-md-2">
 					<p class = "adGridPrice"> Price </p>
@@ -183,6 +188,14 @@
 			</a>
 		</div>
 
+    <div class="pagination" style="margin-left: 900px;">
+    <a href="#">&laquo;</a>
+    <a href="#"  class="active">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    
+   <a href="#">&raquo;</a>
+  </div>
 
 
 	</div>
@@ -222,9 +235,9 @@ Bangalore - 560068 </p>
             </div>
         </div>
         <div class="social-networks" style="padding-top: 10px; padding-bottom: 5px;">
-            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
-            <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+            <a href="https://twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="https://facebook.com" class="facebook"><i class="fa fa-facebook-official"></i></a>
+            <a href="https://plus.google.com" class="google"><i class="fa fa-google-plus"></i></a>
         </div>
         <div class="footer-copyright">
             <p>© XorAds Solutions Pvt. Ltd., 2017 </p>
@@ -298,21 +311,39 @@ Bangalore - 560068 </p>
                 <div class="form" style="width: 400px; margin-bottom: -10px;">
                   <form class="login-form">
                     <input type="text" placeholder="Search by Text" class="form-control"/>
-                    <div class="form-group">
-                    <input type="text" placeholder="Search by User" class="form-control"/>
-                    <div class="form-group">
+                    <input type="text" placeholder="Search by User" class="form-control"/>                    
                     <input type="text" placeholder="Search by Date" class="form-control"/>
-                    <div class="form-group">
-                      <select class="form-control" id="sel1">
-                        <option selected disabled>Select from Category</option>
+                    <div class = "container" style="width:400px;">
+                    	<div class = "row">
+                    		<div class = "col-md-6" style="padding-left: 0px;">
+                    		<input type="text" placeholder="Search from Date" class="form-control"/>
+                    		</div>
+                    		<div class = "col-md-6"  style="padding-right: 0px;">
+                   			<input type="text" placeholder="Search to Date" class="form-control"/>
+                   			</div>
+                   		</div>
+                   	</div>
+                    <div class = "form-group">
+                      <select class="form-control" id="selectCategory">
+                        <option>All Categories</option>
                         <option>Cars & Bikes</option>
                         <option>Clothing & Fashion</option>
                         <option>Furniture & Households</option>
                         <option>Computers & Laptops</option>
                         <option>House & Rentals</option>
                         <option>Mobiles & Electronics</option>
+
                       </select>
                     </div>
+                    <div class = "form-group">
+                      <select class="form-control" id="sortResult">
+                        <option>Price : Low to High</option>
+                        <option>Price : High to Low</option>
+                        <option>Popularity : Low to High</option>
+                        <option>Popularity : High to Low</option>
+                      </select>
+                    </div>
+                   
                     <button style="margin-bottom: 20px;">Search!</button>
                   </form>
                 </div>

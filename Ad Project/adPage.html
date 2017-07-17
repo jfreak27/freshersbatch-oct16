@@ -93,12 +93,14 @@
 	</nav>
 
   <div class = "container-fluid" style=" width:90%;" > 
-    <p style="font-size: 18px; font-weight: bold;"> Ad Title - Ad ID <hr style="padding-top: 10px; margin-top: 0px;"></p>
+    <p style="font-size: 18px; font-weight: bold; margin-bottom: 0px;"> Ad Title </p>
+    <p style="font-size: 12px;"> #postId </p>
+    <hr style="padding-top: 10px; margin-top: 0px;"></p>
   </div>
 
   <div class = "container-fluid adDisplayContainer"> 
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 350px; width: 500px; margin-left: 28%;">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 400px; width: 500px; margin-left: 28%;">
   <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -108,12 +110,11 @@
 
   <!-- Wrapper for slides -->
       <div class="carousel-inner adImgDisp">
-        <div class="item active">
+        <div class="item active"">
           <img src="images/sample1.jpg">
-        </div>
-
+          </div>
         <div class="item">
-          <img src="images/sample2.jpg">
+          <img src="images/sample2.jpg" >
         </div>
       </div>
 
@@ -171,8 +172,16 @@
       <div style="margin-bottom: 40px;"> </div>
 
       <hr style="padding-top: 10px; margin-top: 0px;">
-      <button type="button" style="margin-left:350px;" class="btn btn-primary"><a href="updateAd.html" style="text-decoration: none; color:white;">Edit this Ad</a></button>
-
+      <div class = "container">
+        <div class = "row">
+          <div class = "col-md-6">
+            <button type="button" style="" class="btn btn-primary"><a href="updateAd.html" style="text-decoration: none; color:white;">Edit this Ad</a></button>
+          </div>
+          <div class = "col-md-6">
+            <button type="button" class="btn btn-primary"><a href="updateAd.html" style="text-decoration: none; color:white;">Delete this Ad</a></button>
+          </div>
+        </div>
+      </div>
       <div style="margin-bottom: 20px;"> </div>
 
 
@@ -221,9 +230,9 @@ Bangalore - 560068 </p>
             </div>
         </div>
         <div class="social-networks" style="padding-top: 10px; padding-bottom: 5px;">
-            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
-            <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+            <a href="https://twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="https://facebook.com" class="facebook"><i class="fa fa-facebook-official"></i></a>
+            <a href="https://plus.google.com" class="google"><i class="fa fa-google-plus"></i></a>
         </div>
         <div class="footer-copyright">
             <p>© XorAds Solutions Pvt. Ltd., 2017 </p>
@@ -283,7 +292,7 @@ Bangalore - 560068 </p>
 
 
 
-    <div id="advancedSearchModal" class="modal fade" role="dialog">
+     <div id="advancedSearchModal" class="modal fade" role="dialog">
       <div class="modal-dialog" style="width: 500px;">
           <div class="modal-content">
             <div class="modal-header">
@@ -295,21 +304,39 @@ Bangalore - 560068 </p>
                 <div class="form" style="width: 400px; margin-bottom: -10px;">
                   <form class="login-form">
                     <input type="text" placeholder="Search by Text" class="form-control"/>
-                    <div class="form-group">
-                    <input type="text" placeholder="Search by User" class="form-control"/>
-                    <div class="form-group">
+                    <input type="text" placeholder="Search by User" class="form-control"/>                    
                     <input type="text" placeholder="Search by Date" class="form-control"/>
-                    <div class="form-group">
-                      <select class="form-control" id="sel1">
-                        <option selected disabled>Select from Category</option>
+                    <div class = "container" style="width:400px;">
+                      <div class = "row">
+                        <div class = "col-md-6" style="padding-left: 0px;">
+                        <input type="text" placeholder="Search from Date" class="form-control"/>
+                        </div>
+                        <div class = "col-md-6"  style="padding-right: 0px;">
+                        <input type="text" placeholder="Search to Date" class="form-control"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class = "form-group">
+                      <select class="form-control" id="selectCategory">
+                        <option>All Categories</option>
                         <option>Cars & Bikes</option>
                         <option>Clothing & Fashion</option>
                         <option>Furniture & Households</option>
                         <option>Computers & Laptops</option>
                         <option>House & Rentals</option>
                         <option>Mobiles & Electronics</option>
+
                       </select>
                     </div>
+                    <div class = "form-group">
+                      <select class="form-control" id="sortResult">
+                        <option>Price : Low to High</option>
+                        <option>Price : High to Low</option>
+                        <option>Popularity : Low to High</option>
+                        <option>Popularity : High to Low</option>
+                      </select>
+                    </div>
+                   
                     <button style="margin-bottom: 20px;">Search!</button>
                   </form>
                 </div>

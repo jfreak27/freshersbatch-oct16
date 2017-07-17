@@ -172,10 +172,24 @@
 
     <div class = "container-fluid" style=" width:90%;" > 
     <p style="font-size: 18px; font-weight: bold;"> Ads you posted: <hr style="padding-top: 10px; margin-top: 0px;"></p>
+    <div class = "container" style="width: 400px; padding-left: 0px; margin-left: 0px;">
+      <div class = "row">
+        <div class = "col-md-6">
+          <input type="text" class="form-control form-control-no-border" placeholder="Search Ad with Text" style="width:200px; ">
+        </div>
+        <div class = "col-md-6" style="padding-left: 10px;">
+          <button class="btn btn-default" type="submit" style=" background-color:#337ab7; color:white; width:60px; "><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+          
+    </div>
+    <br>
+    <br>
+
+
     </div>
 
-    <div class = "container-fluid adGrid"> 
-      <a href= "#"> 
+    <div class = "container-fluid adGrid" style="width: 90%"> 
+      <a href= "adPage.html"> 
       <div class = "row"> 
         <div class ="col-md-2">
           <img src = "images/feat_mitsu.jpg" alt="Replace by Server Image">
@@ -186,15 +200,20 @@
             <p class = "adGridDesc"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             <p class = "adGridCategory"> Category </p>
             <p class = "adGridDatePosted"> Date Posted </p>
+            <p class = "adGridPostId"> #postId </p>
         </div>
         <div class = "col-md-2">
           <p class = "adGridPrice"> Price </p>
+          <div class = "row"  style="border:0px; text-align: center;">
+            <button type="button" class="btn btn-primary"><a href="updateAd.html" style="text-decoration: none; color:white;">Edit</a></button>
+            <button type="button" class="btn btn-primary"><a href="#" style="text-decoration: none; color:white;">Delete</a></button>
+          </div>
+
         </div>
       </div>
       </a>
-    </div>
-    <div class = "container-fluid adGrid"> 
-      <a href= "#"> 
+   
+      <a href= "adPage.html"> 
       <div class = "row"> 
         <div class ="col-md-2">
           <img src = "images/feat_mitsu.jpg" alt="Replace by Server Image">
@@ -205,13 +224,39 @@
             <p class = "adGridDesc"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             <p class = "adGridCategory"> Category </p>
             <p class = "adGridDatePosted"> Date Posted </p>
+            <p class = "adGridPostId"> #postId </p>
         </div>
         <div class = "col-md-2">
-          <p class = "adGridPrice"> Price </p>
+          <div class = "row" style="border:0px;">
+            <p class = "adGridPrice"> Price </p>
+          </div>
+          <div class = "row"  style="border:0px; text-align: center;">
+            <button type="button" class="btn btn-primary"><a href="updateAd.html" style="text-decoration: none; color:white;">Edit</a></button>
+            <button type="button" class="btn btn-primary"><a href="updateAd.html" style="text-decoration: none; color:white;">Delete</a></button>
+          </div>
         </div>
       </div>
       </a>
     </div>
+
+    <div class = "container-fluid" style=" width:90%;" > 
+    <p style="font-size: 18px; font-weight: bold;"> Interactions: <hr style="padding-top: 10px; margin-top: 0px;"></p>
+
+    <div class = "adGrid" style=" width:90%; margin-left: 100px;">
+      <div class = "row " style="border:0px;" >
+        <p class = "adGridCategory"> Message from : <b> Customer </b> </p>
+        <p class = "adGridCategory"> Ad Title : <b> Title </b> </p>
+        <p class = "adGridDesc">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+      </div>
+      <div class = "row "  style="border:0px;">
+        <p class = "adGridCategory"> Message from : <b> Customer </b> </p>
+        <p class = "adGridCategory"> Ad Title : <b> Title </b> </p>
+        <p class = "adGridDesc">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+      </div>
+      </div>
+    </div>
+     
+    
 
   
   
@@ -243,9 +288,9 @@ Bangalore - 560068 </p>
             </div>
         </div>
         <div class="social-networks" style="padding-top: 10px; padding-bottom: 5px;">
-            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
-            <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+            <a href="https://twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="https://facebook.com" class="facebook"><i class="fa fa-facebook-official"></i></a>
+            <a href="https://plus.google.com" class="google"><i class="fa fa-google-plus"></i></a>
         </div>
         <div class="footer-copyright">
             <p>© XorAds Solutions Pvt. Ltd., 2017 </p>
@@ -305,7 +350,7 @@ Bangalore - 560068 </p>
 
 
 
-    <div id="advancedSearchModal" class="modal fade" role="dialog">
+     <div id="advancedSearchModal" class="modal fade" role="dialog">
       <div class="modal-dialog" style="width: 500px;">
           <div class="modal-content">
             <div class="modal-header">
@@ -317,21 +362,39 @@ Bangalore - 560068 </p>
                 <div class="form" style="width: 400px; margin-bottom: -10px;">
                   <form class="login-form">
                     <input type="text" placeholder="Search by Text" class="form-control"/>
-                    <div class="form-group">
-                    <input type="text" placeholder="Search by User" class="form-control"/>
-                    <div class="form-group">
+                    <input type="text" placeholder="Search by User" class="form-control"/>                    
                     <input type="text" placeholder="Search by Date" class="form-control"/>
-                    <div class="form-group">
-                      <select class="form-control" id="sel1">
-                        <option selected disabled>Select from Category</option>
+                    <div class = "container" style="width:400px;">
+                      <div class = "row">
+                        <div class = "col-md-6" style="padding-left: 0px;">
+                        <input type="text" placeholder="Search from Date" class="form-control"/>
+                        </div>
+                        <div class = "col-md-6"  style="padding-right: 0px;">
+                        <input type="text" placeholder="Search to Date" class="form-control"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class = "form-group">
+                      <select class="form-control" id="selectCategory">
+                        <option>All Categories</option>
                         <option>Cars & Bikes</option>
                         <option>Clothing & Fashion</option>
                         <option>Furniture & Households</option>
                         <option>Computers & Laptops</option>
                         <option>House & Rentals</option>
                         <option>Mobiles & Electronics</option>
+
                       </select>
                     </div>
+                    <div class = "form-group">
+                      <select class="form-control" id="sortResult">
+                        <option>Price : Low to High</option>
+                        <option>Price : High to Low</option>
+                        <option>Popularity : Low to High</option>
+                        <option>Popularity : High to Low</option>
+                      </select>
+                    </div>
+                   
                     <button style="margin-bottom: 20px;">Search!</button>
                   </form>
                 </div>
