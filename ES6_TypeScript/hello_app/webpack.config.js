@@ -1,5 +1,5 @@
 module.exports = {
-  entry: "./app.js",
+  entry: ["./app.js","babel-polyfill"],
   output: {    filename: "bundle.js"   },
   devServer: {
     inline:true,

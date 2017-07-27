@@ -7,8 +7,11 @@ class Armstrong {
     [Symbol.iterator](){
            
                 return {
-                    getNextArmstrong() {
+                    getNextArmstrong(x) {
                         let i=counter;
+                        if(x==1){i = 10;}
+                       
+                            
                             while(true)
                                 {
                                         
@@ -28,7 +31,19 @@ class Armstrong {
                                            
                                         if(res == i){
                                             counter = i+1;
+                                            
+                                            try{
+                                                    
+                                                    if(i>1000)
+                                                        throw msg; 
+                                            }
+                                            
+                                            catch(msg){console.log(); 
+                                                return {value : "Range went over 1000", done : false};
+                                                }
+
                                             return {value : i, done : false};
+
                                         }
                                         
                                     i++;
@@ -47,21 +62,24 @@ class Armstrong {
 
 
 
-export function exportArmstrong(){
+export function testGenerators(){
 
     let arm = new Armstrong();
     let itr= arm[Symbol.iterator]();
 
-    console.log(itr.getNextArmstrong());
-    console.log(itr.getNextArmstrong());
-    console.log(itr.getNextArmstrong());
-    console.log(itr.getNextArmstrong());
-    console.log(itr.getNextArmstrong());
-    console.log(itr.getNextArmstrong());
-    console.log(itr.getNextArmstrong());
-    console.log(itr.getNextArmstrong());
-    console.log(itr.getNextArmstrong());
-    
+    function *getNext(x){
 
+        for( ; ; ){
+          let x = yield itr.getNextArmstrong(x);
+        }
+    }
+    
+    let getNextArm = getNext();
+    console.log(getNextArm.next().value.value);
+    console.log(getNextArm.next().value.value);
+    console.log(getNextArm.next().value.value);
+    console.log(getNextArm.next().value.value);            //Resets the series
+    console.log(getNextArm.next().value.value);
+    console.log(getNextArm.next().value.value);
     
 }
