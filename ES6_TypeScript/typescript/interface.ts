@@ -24,15 +24,15 @@ class Employee implements Printable{
 }
 
 
-function printall():void{
+function printall(c:Circle, e:Employee):void{
 
-    let c = new Circle();
-    let e = new Employee();
-
+    
     c.print();
     e.print();
 
 
 }
+let c:Circle = new Circle();
+let e:Employee = new Employee();
 
-printall();
+printall(c,e);

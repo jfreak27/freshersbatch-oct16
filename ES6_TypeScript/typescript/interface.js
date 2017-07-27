@@ -12,10 +12,10 @@ var Employee = (function () {
     Employee.prototype.print = function () { console.log("This is a Employee of name " + this.name); };
     return Employee;
 }());
-function printall() {
-    var c = new Circle();
-    var e = new Employee();
+function printall(c, e) {
     c.print();
     e.print();
 }
-printall();
+var c = new Circle();
+var e = new Employee();
+printall(c, e);
