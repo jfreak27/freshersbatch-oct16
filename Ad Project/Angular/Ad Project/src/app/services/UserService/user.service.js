@@ -18,14 +18,14 @@ var UserService = (function () {
     }
     UserService.prototype.RegisterUser = function (user) {
         var url = "http://192.168.3.144:9000/register"; //Akshay's machine
-        var headers = new Headers();
+        var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         var options = new http_2.RequestOptions({ headers: headers });
         return this._http.post(url, user, options).map(function (response) { return response.json(); });
     };
     UserService.prototype.LoginUser = function (user) {
         var url = "http://192.168.3.144:9000/login"; //Akshay's machine
-        var headers = new Headers();
+        var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         var options = new http_2.RequestOptions({ headers: headers });
         var usercred = {

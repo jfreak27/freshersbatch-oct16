@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var http_1 = require("@angular/http");
 var navbar_component_1 = require("./components/navbar-component/navbar.component");
@@ -19,7 +20,7 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
+        imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule],
         declarations: [app_component_1.AppComponent, navbar_component_1.NavBarComponentClass, footer_component_1.FooterComponentClass, login_component_1.LoginComponentClass],
         bootstrap: [app_component_1.AppComponent]
     })

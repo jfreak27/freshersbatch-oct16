@@ -37,6 +37,7 @@ sendToUserServiceLogin( username:string = null,  password:string = null){
     password : password
 
   };
+  console.log(userlogin);
 
   
   this.registerService.LoginUser(userlogin).subscribe((response) => {console.log(response);}, 

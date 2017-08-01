@@ -11,28 +11,63 @@
                   <div class="container-fluid" >
                     <div class = "row" >
                       <div class = "col-md-5">
-                        <form class="login-form">
+                        <form #loginForm="ngForm" class="login-form" novalidate >
                           <p style="font-size: 18px; text-align: center; margin-bottom: 0px;"> Login </p>
                           <hr style="margin-bottom: 15px; margin-top: 10px;">
-                          <input type="text" placeholder="Username" class="form-control" #usernameRef/>
-                          <input type="password" placeholder="Password" class="form-control" #passwordRef/>
-                          <button (click)="sendToUserServiceLogin(usernameRef.value, passwordRef.value)">login</button>
+                          <input type="text" name="username" placeholder="Username" class="form-control" #usernameRef required ngModel #usernameModelRef="ngModel"/>
+                          <input type="password" name="password" placeholder="Password" class="form-control" #passwordRef required ngModel #passwordModelRef="ngModel"/>
+                          <button  [disabled]="!loginForm.form.valid" (click)="sendToUserServiceLogin(usernameRef.value, passwordRef.value)">login</button>
                         </form>
+                           <div *ngIf="(usernameModelRef.errors && usernameModelRef.touched) || (passwordModelRef.errors && passwordModelRef.touched)" class="alert alert-warning"> 
+                             <div [hidden]="loginForm.form.valid "> Please enter Username / Password </div> 
+                           </div>
+                         
                       </div>
                       <div class = "col-md-2 text-center" style="align-content: left; padding-left: 0px;"> 
                         <p style="text-align: center;margin-bottom: 0px;margin-left: 30px;"> OR </p><img src="./images/vertical-line.png" style="height: auto; font-weight: auto;"> 
                       </div>
                       <div class = "col-md-5">
-                        <form class="register-form">
+                        <form class="login-form" #signupForm="ngForm" novalidate>
                           <p style="font-size: 18px; text-align: center;"> Sign up </p>
                           <hr style="margin-bottom: 15px; margin-top: 10px;">
-                          <input type="text" placeholder="First Name" class="form-control" #fnameRef/>
-                          <input type="text" placeholder="Last Name" class="form-control" #lnameRef/>
-                          <input type="text" placeholder="Username" class="form-control" #unameRef/>
-                          <input type="password" placeholder="Password" class="form-control" #pwdRef/>
-                          <input type="text" placeholder="Email Address" class="form-control" #emailRef/>
-                          <input type="text" placeholder="Phone" class="form-control" #phoneRef/>
-                          <button (click) = "sendToUserServiceRegister(fnameRef.value,lnameRef.value,unameRef.value,pwdRef.value,emailRef.value,phoneRef.value)">create</button>
+                          <input type="text" placeholder="First Name" name="fname" class="form-control" #fnameRef ngModel required #fnameModelRef="ngModel"/>
+                          <div *ngIf="fnameModelRef.errors && fnameModelRef.touched" class="alert alert-warning" style="margin-top:-12px; margin-bottom: 10px ;padding:1px; text-align:center;">
+                            <div [hidden]="!fnameModelRef.errors.required" > Please enter First Name </div>
+                          </div>
+                          <input type="text" placeholder="Last Name" name="lname" class="form-control" #lnameRef ngModel required #lnameModelRef="ngModel"/>
+                          <div *ngIf="lnameModelRef.errors && lnameModelRef.touched" class="alert alert-warning" style="margin-top:-12px; margin-bottom: 10px ;padding:1px; text-align:center;">
+                            <div [hidden]="!lnameModelRef.errors.required" > Please enter Last Name </div>
+                          </div>
+                          
+                          <input type="text" placeholder="Username" name="username" class="form-control" #unameRef ngModel required minlength="5" #unameModelRef="ngModel"/>
+                          <div *ngIf="unameModelRef.errors && unameModelRef.touched" class="alert alert-warning" style="margin-top:-12px; margin-bottom: 10px ;padding:1px; text-align:center;">
+                            <div [hidden]="!unameModelRef.errors.required" > Please enter Username </div>
+                            <div [hidden]="!unameModelRef.errors.minlength" > Username must have minimum 5 characters </div>
+                          </div>
+                          
+                          <input type="password" placeholder="Password" name = "password" class="form-control" #pwdRef ngModel required minlength="5" #pwdModelRef="ngModel"/>
+                          <div *ngIf="pwdModelRef.errors && pwdModelRef.touched" class="alert alert-warning" style="margin-top:-12px; margin-bottom: 10px ;padding:1px; text-align:center;">
+                            <div [hidden]="!pwdModelRef.errors.required" > Please enter Password </div>
+                            <div [hidden]="!pwdModelRef.errors.minlength" > Password must have minimum 5 characters </div>
+                          </div>
+                          
+                          
+                          
+                          <input type="email" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" placeholder="Email Address" name = "email" class="form-control" #emailRef ngModel required #emailModelRef="ngModel"/>
+                          <div *ngIf="emailModelRef.touched" class="alert alert-warning" style="margin-top:-12px; margin-bottom: 10px ;padding:1px; text-align:center;">
+                            <div [hidden]="!emailModelRef.valid" > Please enter valid email </div>
+
+                          </div>
+                          
+                          
+                          <input type="text" placeholder="Phone" name = "phoneno" class="form-control" #phoneRef ngModel required minlength="10" maxlength="10" #phoneModelRef="ngModel"/>
+                          <div *ngIf="phoneModelRef.errors && phoneModelRef.touched" class="alert alert-warning" style="margin-top:-12px; margin-bottom: 10px ;padding:1px; text-align:center;">
+                             <div [hidden]="!phoneModelRef.errors.required" > Please enter Phone Number </div>
+                             <div [hidden]="!phoneModelRef.errors.minlength" > Enter Correct Phone Number </div>
+                            
+                          </div>
+                          
+                          <button [disabled] = "!signupForm.form.valid" (click) = "sendToUserServiceRegister(fnameRef.value,lnameRef.value,unameRef.value,pwdRef.value,emailRef.value,phoneRef.value)">create</button>
                           <div style="padding-bottom: 30px;"> 
                           </div>
                         </form>

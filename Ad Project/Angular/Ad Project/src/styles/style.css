@@ -89,6 +89,10 @@ body{
   background: #0058a3;
 }
 
+.login-page > .form button:disabled{
+    cursor: not-allowed;
+}
+
 
 
 .login-page >.form input,textarea {

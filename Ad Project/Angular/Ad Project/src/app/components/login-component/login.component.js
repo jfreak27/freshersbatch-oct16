@@ -33,6 +33,7 @@ var LoginComponentClass = (function () {
             userName: username,
             password: password
         };
+        console.log(userlogin);
         this.registerService.LoginUser(userlogin).subscribe(function (response) { console.log(response); }, function (error) { alert("Wrong Credentials"); });
     };
     return LoginComponentClass;
