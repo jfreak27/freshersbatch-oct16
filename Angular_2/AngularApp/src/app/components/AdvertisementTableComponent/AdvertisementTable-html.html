@@ -2,7 +2,7 @@
 <h3>{{title}}</h3>
 
     
-    <div [ngStyle] = "{'display' : none;}" class="container" style="font-size: 15px; margin-top: 50px; width:70%; " >
+    <div  class="container" style="font-size: 15px; margin-top: 50px; width:70%; " >
      
     <div class="row">
         <div class="col-lg-5">
@@ -34,7 +34,7 @@
                         <td>{{advert.name}}</td>
                         <td>{{advert.category}}</td>
                         <td>{{advert.desc}}</td>
-                        <td><button type="button" class="btn btn-primary" (click) = "deleteAd(advert.id)">Delete</button> </td>
+                        <td><button type="button" class="btn btn-primary" (click)="editAd(advert.id)">Edit</button><button type="button" class="btn btn-primary" (click) = "deleteAd(advert.id)">Delete</button> </td>
                     </tr>
                     
                     </tbody>

@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
-
+import { AdvertisementService } from './services/Advertisement.service';
 @Component({
   selector: 'my-app',
-  template: `<h1><advert-form (AdvertAddEvent)="advertisements=$event"></advert-form> <advert-table [advertList] = "advertisements"></advert-table></h1>`,
-})
-export class AppComponent  { name = 'Angular'; 
+  template: `<router-outlet></router-outlet>`,
+  providers :[AdvertisementService]
 
-public advertisements : Array<any>;
+})
+export class AppComponent  { 
+  
+name = 'Angular'; 
 }
+
+ 

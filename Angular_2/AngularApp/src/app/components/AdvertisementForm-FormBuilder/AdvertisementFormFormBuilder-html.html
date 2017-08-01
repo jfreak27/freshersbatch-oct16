@@ -1,0 +1,71 @@
+<div class="container">
+<h3>{{title}}</h3>
+
+
+<form [formGroup]="adForm" (ngSubmit)="submit(titleRef.value, nameRef.value, categoryRef.value, descRef.value)" novalidate>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <label>Title</label>
+            <input type="text" name="title" class="form-control"  #titleRef formControlName="title" >
+        </div>
+
+        
+    </div>
+    <div [hidden]="adForm.controls.title.pristine && adForm.controls.title.untouched" class="form-group row">
+    
+        
+            <div class = "col-md-3">
+                <div class="alert alert-warning" style="font-size:15px; margin: 0px; padding:5px; text-align:center" *ngIf = "adForm.controls['title'].hasError('required')"  >
+                    
+                        Please give title to Ad!
+                </div>
+
+                <div class="alert alert-warning" style="font-size:15px; margin: 0px; padding:5px; text-align:center" *ngIf = "adForm.controls['title'].hasError('minlength')"  >
+                        Ad title should be minimum 5 letters.
+                    
+                </div>
+            </div>
+        
+    </div> 
+    <div class="form-group row">
+        <div class="col-md-3">
+            <label>Name </label>
+            <input type="text" name="name" class="form-control" #nameRef formControlName="name">
+        </div>
+    </div>
+    <div [hidden]="adForm.controls.name.pristine && adForm.controls.name.untouched" class="form-group row">
+    
+        
+            <div class = "col-md-3">
+                <div class="alert alert-warning" style="font-size:15px; margin: 0px; padding:5px; text-align:center" *ngIf = "adForm.controls['name'].hasError('required')"  >
+                    
+                        Please give title to Ad!
+                </div>
+
+                <div class="alert alert-warning" style="font-size:15px; margin: 0px; padding:5px; text-align:center" *ngIf = "adForm.controls['name'].hasError('minlength')"  >
+                        Ad title should be minimum 5 letters.
+                    
+                </div>
+            </div>
+        
+    </div> 
+    <div class="form-group row">
+        <div class="col-md-3">
+            <label>Category</label>
+            <select #categoryRef name="category"  class="form-control"> 
+                <option *ngFor="let category of categories" >{{category.name}}</option>
+                
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <label>Description</label>
+            <input type="text" name="description" class="form-control" #descRef formControlName="description">
+        </div>
+    </div>
+    <button type="submit" [disabled]="!adForm.valid" class="btn btn-primary" >ADD PRODUCT</button>
+</form>
+    
+
+</div>

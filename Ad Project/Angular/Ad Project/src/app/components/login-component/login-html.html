@@ -1,0 +1,49 @@
+<div id="myAccountModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" style="width: 1000px;">
+          <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Login to your XorAds account</h4>
+            </div>
+            <div class="modal-body" style="padding-left: 0px;" >
+              <div class="login-page" style="margin-left:100px; margin-right: 100px; padding-top: 30px;">
+                <div class="form" style="width: 800px; margin-bottom: -10px;">
+                  <div class="container-fluid" >
+                    <div class = "row" >
+                      <div class = "col-md-5">
+                        <form class="login-form">
+                          <p style="font-size: 18px; text-align: center; margin-bottom: 0px;"> Login </p>
+                          <hr style="margin-bottom: 15px; margin-top: 10px;">
+                          <input type="text" placeholder="Username" class="form-control" #usernameRef/>
+                          <input type="password" placeholder="Password" class="form-control" #passwordRef/>
+                          <button (click)="sendToUserServiceLogin(usernameRef.value, passwordRef.value)">login</button>
+                        </form>
+                      </div>
+                      <div class = "col-md-2 text-center" style="align-content: left; padding-left: 0px;"> 
+                        <p style="text-align: center;margin-bottom: 0px;margin-left: 30px;"> OR </p><img src="./images/vertical-line.png" style="height: auto; font-weight: auto;"> 
+                      </div>
+                      <div class = "col-md-5">
+                        <form class="register-form">
+                          <p style="font-size: 18px; text-align: center;"> Sign up </p>
+                          <hr style="margin-bottom: 15px; margin-top: 10px;">
+                          <input type="text" placeholder="First Name" class="form-control" #fnameRef/>
+                          <input type="text" placeholder="Last Name" class="form-control" #lnameRef/>
+                          <input type="text" placeholder="Username" class="form-control" #unameRef/>
+                          <input type="password" placeholder="Password" class="form-control" #pwdRef/>
+                          <input type="text" placeholder="Email Address" class="form-control" #emailRef/>
+                          <input type="text" placeholder="Phone" class="form-control" #phoneRef/>
+                          <button (click) = "sendToUserServiceRegister(fnameRef.value,lnameRef.value,unameRef.value,pwdRef.value,emailRef.value,phoneRef.value)">create</button>
+                          <div style="padding-bottom: 30px;"> 
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+      </div>
+    </div>

@@ -1,0 +1,402 @@
+
+
+
+body{
+
+
+	font-family: 'Open Sans', sans-serif;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: #337ab7;
+    color: white;
+}
+.pagination a:hover:not(.active) {background-color: #ddd;}
+.dropbtn {
+    background-color: white;
+    color: #337ab7;
+    padding: 16px;
+
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+
+    background-color: #337ab7;
+    color: white;   
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: #f7cc76;
+}
+
+
+
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.login-page > .form {
+ 
+  margin: 0 auto 100px;
+  
+}
+
+
+.login-page > .form button:hover,.form button:active,.form button:focus,.custButton:hover {
+  background: #0058a3;
+}
+
+
+
+.login-page >.form input,textarea {
+ 
+  outline: 0;
+  width: 100%;
+  border: 1px solid silver;
+  border-radius: 5px;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.custButton , .login-page >.form button {
+  
+  text-transform: uppercase;
+  outline: 0;
+  background: #337ab7;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+
+.login-page >.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.login-page >.form .message a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.login-page >.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+
+
+#myFooter {
+	background-color: #373a48;
+	color:white;
+}
+
+#myFooter .footer-copyright{
+	background-color: #383737;
+	padding-top:3px;
+	padding-bottom:3px;
+	text-align: center;
+}
+
+#myFooter .footer-copyright p{
+	margin:10px;
+	color: #ccc;
+}
+
+#myFooter ul{
+	list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+
+}
+
+#myFooter h5{
+	font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter a{
+	color:#d2d1d1;
+	text-decoration: none;
+}
+
+#myFooter a:hover, #myFooter a:focus{
+	text-decoration: none;
+	color:white;
+}
+
+#myFooter .myCols{
+	text-align: center;
+}
+
+#myFooter .social-networks{
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 38px;
+}
+
+#myFooter .social-networks a{
+    font-size: 32px;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #f9f9f9;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+#myFooter .social-networks a:hover{
+	text-decoration: none;
+
+}
+
+#myFooter .facebook:hover{
+	color:#0077e2;
+}
+
+#myFooter .google:hover{
+	color:#ef1a1a;
+}
+
+#myFooter .twitter:hover{
+	color: #00aced;
+}
+
+@media screen and (max-width: 767px){
+	#myFooter {
+		text-align: center;
+	}
+}
+
+
+
+/* CSS used for positioning the footers at the bottom of the page. */
+/* You can remove this. */
+
+
+html{
+	height: 100% !important;
+}
+
+body{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+.content{
+	flex: 1 0 auto;
+	-webkit-flex: 1 0 auto;
+	min-height: 200px;
+}
+
+#myFooter{
+	flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+}
+
+
+
+.adGrid{
+
+	margin-bottom: 20px;
+
+}
+
+.adGrid .row{
+
+	border: 1px solid #EBEBEC;
+    margin-bottom: 20px;
+
+
+	
+
+}
+
+.adGrid .row:hover{
+
+	background-color: #f9f9f9;
+	box-shadow: 0px 1px 25px -10px rgba(0,0,0,0.75)
+
+}
+
+.adGrid a{
+
+	text-decoration: none;
+}
+
+.col-md-2 > img{
+
+	margin-top: 5px;
+	width:144px ; 
+	height: 108px;
+
+}
+
+
+.editAdImgGrid > div > div > img{
+
+	
+	width:144px ; 
+	height: 108px;
+
+}
+
+.imgGrid > div > div > img{
+
+    margin-top: 20px;
+    width: 144px; 
+    height: 108px;
+}
+
+
+.adGridContainer{
+
+	margin-left: 100px;
+	margin-right: 100px; 
+	font-size: 18px;
+}
+
+.adDisplayContainer{
+
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.adImgDisp > div >img{
+
+
+  width:300px;
+  margin: auto;
+
+  height:400px !important
+}
+
+.adDetTitle{
+
+  font-size: 18px;
+  color: #337ab7;
+  font-weight: bold;
+  text-align: center;
+}
+
+.adDetTitle div , .adDetValues div {
+
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+
+.adDetValues{
+
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+
+
+}
+.adGridHeader{
+
+	padding-top: 5px;
+	font-weight: bold;
+
+
+}
+
+
+.adGridDesc{
+
+	font-size: 16px;
+	color: black;
+}
+
+.adGridCategory{
+
+	font-size: 12px; 
+	color: darkgrey;  
+	margin-bottom: 0px;
+}
+
+.adGridDatePosted{
+
+	font-size: 12px;
+	color: darkgrey; 
+	margin-top: 0px; 
+	margin-bottom: 0px; 
+}
+
+.adGridPostId{
+
+  font-size: 12px;
+  color: black; 
+
+  margin-top: 0px; 
+  margin-bottom: 0px; 
+}
+
+
+.adGridPrice{
+
+
+	text-align: center; 
+	padding-top: 30px; 
+	font-weight: bolder; 
+	font-size: 22px;
+	color: black;
+}
+

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core'; 
-
+import { AdvertisementService } from '../../services/Advertisement.service';
+import { Router } from '@angular/router';
 @Component({
 
 
     selector : 'advert-table',
     templateUrl : "./AdvertisementTable-html.html",
-    inputs : ['advertList'],
+    
     
 
 })
@@ -16,17 +17,28 @@ export class AdvertisementTableClass  {
 
    public advertList : Array<any>;
 
+   constructor(private adService:AdvertisementService, private router:Router){
+
+        this.advertList = adService.getAllAds();
+        console.log(this.advertList);
+   }
     
    deleteAd(id:number){
 
-        for(let ad of this.advertList){
+        this.adService.deleteAd(id);
 
-            if(id === ad.id){
-                let index = this.advertList.indexOf(ad);
+   }
 
-                this.advertList.splice(index,1);
-            }
-        }
+   getAd(id:number){
+
+    this.adService.getAd(1);
+
+   }
+
+   editAd(id:number){
+
+      this.router.navigate(['/edit', id]);
+
 
    }
         
