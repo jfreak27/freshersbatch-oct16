@@ -55,20 +55,20 @@
                           
                           
                           
-                          <input type="text"  placeholder="Email Address" name = "email" class="form-control" #emailRef ngModel required #emailModelRef="ngModel"/>
-                          <!-- <div *ngIf="emailModelRef.touched" class="alert alert-warning" style="margin-top:-12px; margin-bottom: 10px ;padding:1px; text-align:center;">
-                            <div [hidden]="!emailModelRef.valid" > Please enter valid email </div>
+                          <input type="email" placeholder="Email Address" name = "email" class="form-control" #emailRef ngModel required #emailModelRef="ngModel"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+                            <div class = "alert alert-warning" [hidden]="emailModelRef.valid || emailModelRef.untouched" style="margin-top:-12px; margin-bottom: 10px ;padding:1px; text-align:center;">
+                             <div  *ngIf="emailModelRef.errors && emailModelRef.errors.required"> Email is required. </div>
+                             <div  *ngIf="emailModelRef.errors && emailModelRef.errors.pattern">Email is invalid</div>
+                            </div>
+                          <input type="number" placeholder="Phone" name = "phoneno" class="form-control" #phoneRef ngModel required minlength="10" maxlength="10" #phoneModelRef="ngModel"/>
+                          <div *ngIf="phoneModelRef.errors && phoneModelRef.touched" class="alert alert-warning" style="margin-top:-12px; margin-bottom: 10px ;padding:1px; text-align:center;">
+                             <div [hidden]="!phoneModelRef.errors.required" > Please Enter Phone Number </div>
+                             <div [hidden]="!phoneModelRef.errors.minlength" > Enter Correct Phone Number </div>
 
                           </div>
-                           -->
-                          
-                          <input type="text" placeholder="Phone" name = "phoneno" class="form-control" #phoneRef ngModel required minlength="10" maxlength="10" #phoneModelRef="ngModel"/>
-                          <div *ngIf="phoneModelRef.errors && phoneModelRef.touched" class="alert alert-warning" style="margin-top:-12px; margin-bottom: 10px ;padding:1px; text-align:center;">
-                             <div [hidden]="!phoneModelRef.errors.required" > Please enter Phone Number </div>
-                             <div [hidden]="!phoneModelRef.errors.minlength" > Enter Correct Phone Number </div>
-                            
-                          </div>
-                          
+
+                          <div [hidden]="!registerSuccess" class = "alert alert-success" style="text-align : center"> Account Created Successfully! <br> Now Login </div>
+                          <div [hidden]="!registerFailure" class = "alert alert-danger" style="text-align : center"> User already exist! <br> Login to continue </div>
                           <button [disabled] = "!signupForm.form.valid" (click) = "sendToUserServiceRegister(fnameRef.value,lnameRef.value,unameRef.value,pwdRef.value,emailRef.value,phoneRef.value)">create</button>
                           <div style="padding-bottom: 30px;"> 
                           </div>

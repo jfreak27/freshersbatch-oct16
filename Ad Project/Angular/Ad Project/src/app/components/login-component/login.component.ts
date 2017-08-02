@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../services/UserService/user.service'
+import { Router } from '@angular/router';
 @Component({
   selector: 'login',
   templateUrl: `./login-html.html`,
@@ -10,8 +11,10 @@ export class LoginComponentClass  {
   public authToken:string;
   public username:string;
   public loginSuccess:boolean = true;
+  public registerSuccess:boolean = false;
+  public registerFailure:boolean = false;
 
-constructor(private userService:UserService){}
+constructor(private userService:UserService, private router : Router){}
 
 sendToUserServiceRegister(fname:string,lname:string,uname:string,pwd:string,email:string,phone:number){
 let msg:any;
@@ -26,8 +29,8 @@ let msg:any;
         phone: phone
     };
 
-    this.userService.RegisterUser(user).subscribe((response)=>{console.log("Server says",response)},
-                                                        (error)=>{alert("User Already Exist!")} );
+    this.userService.RegisterUser(user).subscribe((response)=>{console.log("Server says",response); this.registerSuccess = true;},
+                                                        (error)=>{this.registerFailure = true;} );
 }
 
 
@@ -48,7 +51,7 @@ sendToUserServiceLogin( username:string = null,  password:string = null){
               
             if(this.authToken!=null){
               
-                document.getElementById('closeModal').click();
+               document.getElementById('closeModal').click();
                this.userService.setAuthToken(this.authToken);
                this.userService.setUserName(this.username);
                
@@ -68,6 +71,11 @@ sendToUserServiceLogin( username:string = null,  password:string = null){
 
 
 
+}
+
+goToMyAccount(){
+
+  this.router.navigate(['/myAccount']);
 }
 
 }

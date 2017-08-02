@@ -10,12 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var user_service_1 = require("../../services/UserService/user.service");
+var router_1 = require("@angular/router");
 var LoginComponentClass = (function () {
-    function LoginComponentClass(userService) {
+    function LoginComponentClass(userService, router) {
         this.userService = userService;
+        this.router = router;
         this.loginSuccess = true;
+        this.registerSuccess = false;
+        this.registerFailure = false;
     }
     LoginComponentClass.prototype.sendToUserServiceRegister = function (fname, lname, uname, pwd, email, phone) {
+        var _this = this;
         var msg;
         var user = {
             firstName: fname,
@@ -25,7 +30,7 @@ var LoginComponentClass = (function () {
             email: email,
             phone: phone
         };
-        this.userService.RegisterUser(user).subscribe(function (response) { console.log("Server says", response); }, function (error) { alert("User Already Exist!"); });
+        this.userService.RegisterUser(user).subscribe(function (response) { console.log("Server says", response); _this.registerSuccess = true; }, function (error) { _this.registerFailure = true; });
     };
     LoginComponentClass.prototype.sendToUserServiceLogin = function (username, password) {
         var _this = this;
@@ -51,6 +56,9 @@ var LoginComponentClass = (function () {
             alert("Wrong Credentials");
         });
     };
+    LoginComponentClass.prototype.goToMyAccount = function () {
+        this.router.navigate(['/myAccount']);
+    };
     return LoginComponentClass;
 }());
 LoginComponentClass = __decorate([
@@ -58,7 +66,7 @@ LoginComponentClass = __decorate([
         selector: 'login',
         templateUrl: "./login-html.html",
     }),
-    __metadata("design:paramtypes", [user_service_1.UserService])
+    __metadata("design:paramtypes", [user_service_1.UserService, router_1.Router])
 ], LoginComponentClass);
 exports.LoginComponentClass = LoginComponentClass;
 //# sourceMappingURL=login.component.js.map
