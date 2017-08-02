@@ -13,6 +13,10 @@ var http_1 = require("@angular/http");
 var navbar_component_1 = require("./components/navbar-component/navbar.component");
 var footer_component_1 = require("./components/footer-component/footer.component");
 var login_component_1 = require("./components/login-component/login.component");
+var postAd_component_1 = require("./components/postAd-component/postAd.component");
+var adGrid_component_1 = require("./components/adGrid-component/adGrid.component");
+var adPage_component_1 = require("./components/adPage-component/adPage.component");
+var router_1 = require("@angular/router");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,8 +24,8 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, navbar_component_1.NavBarComponentClass, footer_component_1.FooterComponentClass, login_component_1.LoginComponentClass],
+        imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, router_1.RouterModule.forRoot([{ path: '', component: adGrid_component_1.AdGridComponentClass }, { path: 'postAd', component: postAd_component_1.PostAdComponentClass }, { path: 'adPage/:id', component: adPage_component_1.AdPageComponentClass }])],
+        declarations: [app_component_1.AppComponent, navbar_component_1.NavBarComponentClass, footer_component_1.FooterComponentClass, login_component_1.LoginComponentClass, postAd_component_1.PostAdComponentClass, adGrid_component_1.AdGridComponentClass, adPage_component_1.AdPageComponentClass],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

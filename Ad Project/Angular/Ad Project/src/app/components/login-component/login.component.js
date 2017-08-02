@@ -11,8 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var user_service_1 = require("../../services/UserService/user.service");
 var LoginComponentClass = (function () {
-    function LoginComponentClass(registerService) {
-        this.registerService = registerService;
+    function LoginComponentClass(userService) {
+        this.userService = userService;
+        this.loginSuccess = true;
     }
     LoginComponentClass.prototype.sendToUserServiceRegister = function (fname, lname, uname, pwd, email, phone) {
         var msg;
@@ -24,9 +25,10 @@ var LoginComponentClass = (function () {
             email: email,
             phone: phone
         };
-        this.registerService.RegisterUser(user).subscribe(function (response) { console.log("Server says", response); }, function (error) { alert("User Already Exist!"); });
+        this.userService.RegisterUser(user).subscribe(function (response) { console.log("Server says", response); }, function (error) { alert("User Already Exist!"); });
     };
     LoginComponentClass.prototype.sendToUserServiceLogin = function (username, password) {
+        var _this = this;
         if (username === void 0) { username = null; }
         if (password === void 0) { password = null; }
         var userlogin = {
@@ -34,7 +36,20 @@ var LoginComponentClass = (function () {
             password: password
         };
         console.log(userlogin);
-        this.registerService.LoginUser(userlogin).subscribe(function (response) { console.log(response); }, function (error) { alert("Wrong Credentials"); });
+        this.userService.LoginUser(userlogin).subscribe(function (response) {
+            _this.authToken = response.data['auth-token'];
+            _this.username = response.data['userId'];
+            if (_this.authToken != null) {
+                document.getElementById('closeModal').click();
+                _this.userService.setAuthToken(_this.authToken);
+                _this.userService.setUserName(_this.username);
+            }
+            if (_this.authToken == null) {
+                _this.loginSuccess = false;
+            }
+        }, function (error) {
+            alert("Wrong Credentials");
+        });
     };
     return LoginComponentClass;
 }());
@@ -42,7 +57,6 @@ LoginComponentClass = __decorate([
     core_1.Component({
         selector: 'login',
         templateUrl: "./login-html.html",
-        providers: [user_service_1.UserService]
     }),
     __metadata("design:paramtypes", [user_service_1.UserService])
 ], LoginComponentClass);

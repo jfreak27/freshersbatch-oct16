@@ -13,10 +13,11 @@
       			</ul>
       			<ul class="nav navbar-nav navbar-right">
         			
-      				<li style="margin-top: 8px; margin-right: 10px;"> <button type="button" class="btn btn-primary"><a href="postAd.html" style="text-decoration: none; color:white;">Post Ad for Free!</a></button> </li>
-        			<li style="padding-right: 15px;"><a data-toggle="modal" data-target="#myAccountModal" style="cursor: pointer"><span class="glyphicon glyphicon-user "></span> Your Account</a></li>
-        			
-     			 </ul>
+      				<li style="margin-top: 8px; margin-right: 10px;"> <button type="button" class="btn btn-primary" (click) = "goToPostAd()" >Post Ad for Free!</button> </li>
+        			<li *ngIf="token==null"  style="padding-right: 15px;"><a id="loginButton" data-toggle="modal" data-target="#myAccountModal" style="cursor: pointer"><span class="glyphicon glyphicon-user "></span> Login</a></li>
+        			<li *ngIf="token!=null" style="padding-right: 15px;"><a href=""><span class="glyphicon glyphicon-user "></span> My Account</a></li>
+					<li *ngIf="token!=null" style="padding-right: 15px;"><a (click) = "logout()" ><span class="glyphicon glyphicon-user "></span> Logout</a></li>	 
+				</ul>
     		</div>
   		</div>
 	</nav>
@@ -34,23 +35,11 @@
         							<div class = "container-fluid" style="padding-top: 10px;" > 
         								<div class = "row text-center" style="padding-bottom: 10px; ">
         									
-        									<div class = "col-md-3"> 
-        										<a id="categoryLink" href="adGrid.html"> <img src="icons/clothing.png">
-        										<p>Clothings</p> </a>
-        									</div>
-        									<div class = "col-md-3"> 
-        										<a id="categoryLink" href="adGrid.html"> <img src="icons/furniture.png"> 
-        										<p>Furnitures</p> </a>
+        									<div class = "col-md-3" *ngFor="let x of categories"> 
+        										<a id="categoryLink" href=""> <img src="../../../icons/clothing.png">
+        										<p>{{x}}</p> </a>
         									</div>
         									
-        									<div class = "col-md-3"> 
-        										<a id="categoryLink" href="adGrid.html"> <img src="icons/house.png"> 
-        										<p>Real Estate</p> </a>  
-        									</div>
-        									<div class = "col-md-3"> 
-        										<a id="categoryLink" href="adGrid.html"> <img src="icons/mobile.png"> 
-        										<p>Mobiles</p> </a>
-        									</div>
         									
         								</div>
         							</div>

@@ -20,7 +20,7 @@ export class EditAdClass implements OnInit {
      description:any;
      category:any;
      id:number;
-    categories = [{id: 1, name : "Hardware"},
+     categories = [{id: 1, name : "Hardware"},
                 {id: 2, name : "Furniture"},
                 {id: 3, name : "Mobile"}];
 

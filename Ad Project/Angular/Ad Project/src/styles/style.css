@@ -11,6 +11,7 @@ body{
     display: inline-block;
 }
 
+.hide {display :none; }
 .pagination a {
     color: black;
     float: left;

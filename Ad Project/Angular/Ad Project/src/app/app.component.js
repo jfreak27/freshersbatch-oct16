@@ -6,6 +6,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
+var ad_service_1 = require("./services/AdService/ad.service");
+var user_service_1 = require("./services/UserService/user.service");
 var AppComponent = (function () {
     function AppComponent() {
     }
@@ -14,7 +16,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "<navigation-bar></navigation-bar> <myfooter></myfooter>",
+        template: "<navigation-bar></navigation-bar> <router-outlet></router-outlet> <myfooter></myfooter>",
+        providers: [ad_service_1.AdService, user_service_1.UserService]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
