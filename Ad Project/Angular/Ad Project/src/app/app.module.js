@@ -17,6 +17,7 @@ var postAd_component_1 = require("./components/postAd-component/postAd.component
 var adGrid_component_1 = require("./components/adGrid-component/adGrid.component");
 var adPage_component_1 = require("./components/adPage-component/adPage.component");
 var myAccount_component_1 = require("./components/myAccount-component/myAccount.component");
+var editAd_component_1 = require("./components/editAd-component/editAd.component");
 var router_1 = require("@angular/router");
 var AppModule = (function () {
     function AppModule() {
@@ -25,8 +26,8 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, router_1.RouterModule.forRoot([{ path: '', component: adGrid_component_1.AdGridComponentClass }, { path: 'postAd', component: postAd_component_1.PostAdComponentClass }, { path: 'adPage/:id', component: adPage_component_1.AdPageComponentClass }, { path: 'myAccount', component: myAccount_component_1.MyAccountComponentClass }])],
-        declarations: [app_component_1.AppComponent, navbar_component_1.NavBarComponentClass, footer_component_1.FooterComponentClass, login_component_1.LoginComponentClass, postAd_component_1.PostAdComponentClass, adGrid_component_1.AdGridComponentClass, adPage_component_1.AdPageComponentClass, myAccount_component_1.MyAccountComponentClass],
+        imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, router_1.RouterModule.forRoot([{ path: '', component: adGrid_component_1.AdGridComponentClass }, { path: 'postAd', component: postAd_component_1.PostAdComponentClass }, { path: 'adPage/:id', component: adPage_component_1.AdPageComponentClass }, { path: 'myAccount', component: myAccount_component_1.MyAccountComponentClass }, { path: 'editAd/:id', component: editAd_component_1.EditAdComponentClass }])],
+        declarations: [app_component_1.AppComponent, navbar_component_1.NavBarComponentClass, footer_component_1.FooterComponentClass, login_component_1.LoginComponentClass, postAd_component_1.PostAdComponentClass, adGrid_component_1.AdGridComponentClass, adPage_component_1.AdPageComponentClass, myAccount_component_1.MyAccountComponentClass, editAd_component_1.EditAdComponentClass],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

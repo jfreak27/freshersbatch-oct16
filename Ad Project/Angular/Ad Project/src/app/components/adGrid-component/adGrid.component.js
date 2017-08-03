@@ -16,13 +16,40 @@ var AdGridComponentClass = (function () {
         var _this = this;
         this.adservice = adservice;
         this.router = router;
+        this.filteredAds = [];
+        this.cat = null;
         this.allAds = [];
         this.adservice.getAllAds().subscribe(function (response) { return _this.storeAds(response); });
     }
+    AdGridComponentClass.prototype.ngDoCheck = function () {
+        this.cat = this.adservice.getCategory();
+        if (this.cat != undefined) {
+            this.filteredads(this.cat);
+        }
+        if (this.cat == undefined) {
+            this.filteredads(null);
+        }
+    };
+    AdGridComponentClass.prototype.filteredads = function (text) {
+        console.log("InAdGrid", text);
+        this.filteredAds = [];
+        for (var _i = 0, _a = this.allAds; _i < _a.length; _i++) {
+            var x = _a[_i];
+            if (text == null) {
+                this.filteredAds.push(x);
+            }
+            else {
+                if (text == x.category) {
+                    this.filteredAds.push(x);
+                }
+            }
+        }
+    };
     AdGridComponentClass.prototype.goToAd = function (id) {
         this.router.navigate(['/adPage', id]);
     };
     AdGridComponentClass.prototype.storeAds = function (response) {
+        //this.filteredAds = [];
         for (var _i = 0, _a = response.data.advertiseList; _i < _a.length; _i++) {
             var x = _a[_i];
             this.allAds.push(x);

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../services/UserService/user.service'
 import { Router } from '@angular/router';
-import { AdService } from '../../services/AdService/ad.service'
+import { AdService } from '../../services/AdService/ad.service';
+import { AdGridComponentClass }  from '../adGrid-component/adGrid.component';
 
 @Component({
   selector: 'navigation-bar',
@@ -22,6 +23,8 @@ export class NavBarComponentClass  {
   }
 
 
+
+
   constructor(private router:Router, private userservice:UserService, private adservice : AdService){
 
     this.adservice.getCategories().subscribe((response)=>{this.generateCategories(response)});
@@ -36,6 +39,7 @@ export class NavBarComponentClass  {
       if(this.token==null){
         console.log("123");
            document.getElementById('loginButton').click();
+           alert("Please login to post ad");
       }
           
 
@@ -55,6 +59,20 @@ export class NavBarComponentClass  {
     
 
    }
+
+   goToMyAccount(){
+
+   // let userid = this.userservice.getUserName();
+    this.router.navigate(['/myAccount']);
+
+   }
     
+   filteredAds(cat:any){
+    console.log("in navbar",cat);
+      this.adservice.setCategory(cat);
+    
+  }
+
+
   
  }

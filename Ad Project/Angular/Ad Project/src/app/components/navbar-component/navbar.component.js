@@ -34,6 +34,7 @@ var NavBarComponentClass = (function () {
         if (this.token == null) {
             console.log("123");
             document.getElementById('loginButton').click();
+            alert("Please login to post ad");
         }
     };
     NavBarComponentClass.prototype.ngDoCheck = function () {
@@ -42,6 +43,14 @@ var NavBarComponentClass = (function () {
     NavBarComponentClass.prototype.logout = function () {
         this.userservice.LogOutUser(this.token);
         this.userservice.setAuthToken(null);
+    };
+    NavBarComponentClass.prototype.goToMyAccount = function () {
+        // let userid = this.userservice.getUserName();
+        this.router.navigate(['/myAccount']);
+    };
+    NavBarComponentClass.prototype.filteredAds = function (cat) {
+        console.log("in navbar", cat);
+        this.adservice.setCategory(cat);
     };
     return NavBarComponentClass;
 }());

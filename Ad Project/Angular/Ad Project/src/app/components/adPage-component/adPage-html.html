@@ -1,8 +1,8 @@
 
 	<body style="font-family: 'Open Sans', sans-serif;">
 <div class = "container-fluid" style=" width:90%;" > 
-    <p style="font-size: 18px; font-weight: bold; margin-bottom: 0px;"> Ad Title </p>
-    <p style="font-size: 12px;"> #postId </p>
+    <p style="font-size: 18px; font-weight: bold; margin-bottom: 0px;"> {{ad.title}} </p>
+    <p style="font-size: 12px;"> #{{ad.id}} </p>
     <hr style="padding-top: 10px; margin-top: 0px;">
   </div>
 
@@ -38,54 +38,41 @@
     </div>
 
     <div class = "container-fluid" style="width: 800px; margin-top: 50px;">
-      <div class = "row adDetTitle" style="margin-left:150px;">
+      <div class = "row adDetTitle" style="margin-left:220px;">
         <div class = "col-md-3">
           <p> Posted by </p>
         </div>
-        <div class = "col-md-3">
-          <p> Contact </p>
-        </div>
+        
         
         <div class = "col-md-3">
           <p> Date Posted </p>
         </div>
       </div>
 
-      <div class = "row adDetValues" style="margin-left:150px;">
+      <div class = "row adDetValues" style="margin-left:220px;">
         <div class = "col-md-3">
-          <p> OwnerName </p>
-        </div>
-        <div class = "col-md-3">
-          <p> 9876543210 </p>
+          <p> {{ad.name}} </p>
         </div>
         
+        
         <div class = "col-md-3">
-          <p> dd/mm/yyyy </p>
+          <p> {{ad.createdDate}} </p>
         </div>
       </div>
 
       <div class = "row adGridDesc" style="margin-top: 20px;">
         <div class = "col-md-12">
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p class = "adGridCategory" style="font-size: 16px;">Category </p>
+          <p>{{ad.description}}</p>
+          <p class = "adGridCategory" style="font-size: 16px;">{{ad.category}} </p>
         </div>
        
       </div>
       <div style="margin-bottom: 10px;"> </div>
-      <button type="button" class="btn btn-primary"><a href="#" style="text-decoration: none; color:white;">Show Interest</a></button>
+      <button type="button" class="btn btn-primary"><a id="messageButton" data-toggle="modal" data-target="#messageModal" style="text-decoration: none; color:white;" >Show Interest</a></button>
       <div style="margin-bottom: 40px;"> </div>
 
       <hr style="padding-top: 10px; margin-top: 0px;">
-      <div class = "container">
-        <div class = "row">
-          <div class = "col-md-6">
-            <button type="button"  class="btn btn-primary"><a href="updateAd.html" style="text-decoration: none; color:white;">Edit this Ad</a></button>
-          </div>
-          <div class = "col-md-6">
-            <button type="button" class="btn btn-primary"><a href="updateAd.html" style="text-decoration: none; color:white;">Delete this Ad</a></button>
-          </div>
-        </div>
-      </div>
+      
       <div style="margin-bottom: 20px;"> </div>
 
 
@@ -98,4 +85,41 @@
 
 
 </div>
+
+<div id="messageModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" style="width: 500px;">
+          <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="closeModal" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Message {{ad.name}}</h4>
+            </div>
+            <div class="modal-body" style="padding-left: 0px;" >
+              <div class="login-page" style="margin-left:50px; margin-right: 100px; padding-top: 20px;">
+                <div class="form" style="width: 400px;">
+                  <div class="container-fluid" >
+                    <div class = "row" >
+                      
+                        <form #messageForm="ngForm" class="login-form" novalidate >
+                          
+                          <hr style="margin-bottom: 15px; margin-top: 10px;">
+                           <textarea class="form-control" id="exampleTextarea" rows="3" #msgRef  >I'm Interested</textarea>
+                          <br>
+                          <button (click)="sendMessage(ad.id, msgRef.value)" >Send Message</button>
+                        </form>
+                     
+                      </div>
+                     
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+      </div>
+    
+
+
+
 </body>

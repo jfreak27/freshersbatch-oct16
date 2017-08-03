@@ -8,19 +8,57 @@ import { Router } from '@angular/router';
 })
 export class AdGridComponentClass  {
 
+    public filteredAds:any = [];
+    public cat:any = null;
     public allAds:any = [];
+    
     constructor(private adservice:AdService, private router:Router){
 
-
-        this.adservice.getAllAds().subscribe((response)=> this.storeAds(response));
         
+        this.adservice.getAllAds().subscribe((response)=> this.storeAds(response));
+   
 
        
     }
-  
+
+
+    ngDoCheck(){
+
+            this.cat = this.adservice.getCategory();
+            if(this.cat != undefined) {
+                this.filteredads(this.cat);
+            }
+            if(this.cat == undefined){
+                this.filteredads(null);
+            }
+
+    }
+
+    filteredads(text:any){
+
+      console.log("InAdGrid", text);
+      this.filteredAds = [];
+      for(let x of this.allAds){
+
+            if(text == null){
+                this.filteredAds.push(x);
+            }
+            else{
+                if(text == x.category){
+                    this.filteredAds.push(x);
+                }
+            }
+            
+        }
+    }
+       
+
+    
+
+
     goToAd(id:number){
 
-           this.router.navigate(['/adPage', id]);
+           this.router.navigate(['/adPage',id]);
 
 
     }
@@ -28,9 +66,10 @@ export class AdGridComponentClass  {
     
     storeAds(response:any){
 
+        //this.filteredAds = [];
             for(let x of response.data.advertiseList){
                          this.allAds.push(x);
-    }
+             }
                         console.log(this.allAds);
                         this.convertDate(this.allAds);
                         
@@ -45,4 +84,6 @@ export class AdGridComponentClass  {
             }
 
     }
+
+   
  }

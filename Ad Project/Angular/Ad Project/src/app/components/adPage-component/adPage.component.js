@@ -10,12 +10,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var ad_service_1 = require("../../services/AdService/ad.service");
+var user_service_1 = require("../../services/UserService/user.service");
 var AdPageComponentClass = (function () {
-    function AdPageComponentClass(activatedRoute) {
+    function AdPageComponentClass(activatedRoute, adservice, userservice) {
         this.activatedRoute = activatedRoute;
+        this.adservice = adservice;
+        this.userservice = userservice;
+        this.ad = {};
     }
     AdPageComponentClass.prototype.ngOnInit = function () {
-        this.id = this.activatedRoute.snapshot.params['id'];
+        var _this = this;
+        this.postid = this.activatedRoute.snapshot.params['id'];
+        this.adservice.getAdById(this.postid).subscribe(function (response) {
+            _this.ad = response.data.mypost;
+            _this.ad.createdDate = new Date(_this.ad.createdDate).toLocaleDateString('en-GB');
+        });
+    };
+    AdPageComponentClass.prototype.sendMessage = function (id, msg) {
+        var auth_token = this.userservice.getAuthToken();
+        if (auth_token == null || auth_token == undefined) {
+            alert("Please login to message poster");
+        }
+        console.log(id);
+        console.log(msg);
+        this.adservice.sendMessage(id, msg, auth_token).subscribe(function (response) { console.log(response); });
     };
     return AdPageComponentClass;
 }());
@@ -24,7 +43,7 @@ AdPageComponentClass = __decorate([
         selector: 'adPage',
         templateUrl: "./adPage-html.html",
     }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute])
+    __metadata("design:paramtypes", [router_1.ActivatedRoute, ad_service_1.AdService, user_service_1.UserService])
 ], AdPageComponentClass);
 exports.AdPageComponentClass = AdPageComponentClass;
 //# sourceMappingURL=adPage.component.js.map

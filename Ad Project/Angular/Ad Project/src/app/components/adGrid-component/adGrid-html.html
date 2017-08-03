@@ -3,25 +3,25 @@
 	
 	<div class = "container-fluid adGridContainer"> 
   <!-- <p style="padding-bottom: 0px;"> Search Results </p><hr style="padding-top: 10px; margin-top: 0px;"> -->
-  <div class = "container" style="width: 300px; padding-left: 0px; margin-left: 0px;">
+  <div class = "container" style="width: 300px; padding-left: 0px; margin-left: 165px;">
     <div class = "row">
-      <div class = "col-md-8">
-        <div class = "form-group">
-                      <select class="form-control" id="sortResult">
-                        
-                        <option>Date : Low to High</option>
-                        <option>Date : High to Low</option>
-                      </select>
-        </div>
-        </div>
-        <div class = "col-md-4" style="padding-left: 0px;">
-          <button type="button" class="btn btn-primary" ><a href="updateAd.html" style="text-decoration: none; color:white;">Sort</a></button>
-        </div>
+      
+        <!-- <form class="navbar-form navbar-right " style="margin-left: 100px;">
+     						 <div class="input-group" style=" box-shadow: 0px 1px 3px silver;">
+       							<input type="text" class="form-control form-control-no-border" #searchRef placeholder="What are you looking for?" style="width:400px; ">
+        						<div class="input-group-btn">
+         							<button (click)="filteredads(searchRef.value)" class="btn btn-default" type="submit" style=" background-color:#337ab7; color:white; width:60px; "><i class="glyphicon glyphicon-search"></i></button>
+                      
+        							</div>
+      						</div>
+    					  </form> -->
+       
+        
       </div>
     </div>
 
 		<div class = "container-fluid adGrid" style="margin-top: 10px;"> 
-			<a href= "adPage.html" *ngFor="let ad of allAds" (click) = "goToAd(ad.id)"> 
+			<a  *ngFor="let ad of filteredAds" (click) = "goToAd(ad.id)"> 
 			<div class = "row"> 
 				<div class ="col-md-2">
 					<img src = "images/feat_mitsu.jpg" alt="Replace by Server Image">

@@ -1,12 +1,12 @@
 
-	<body style="font-family: 'Open Sans', sans-serif;">
+<body style="font-family: 'Open Sans', sans-serif;">
 	<div class = "container-fluid" style=" width:90%;" > 
-	<p style="font-size: 18px; font-weight: bold;"> Post a Free Ad! </p><hr style="padding-top: 10px; margin-top: 0px;">
+	<p style="font-size: 18px; font-weight: bold;"> Edit Your Ad </p><hr style="padding-top: 10px; margin-top: 0px;">
     <div class="login-page" style="padding-top: 0px;">
       <div class="form">
       
               <form class="login-form" #adForm="ngForm" novalidate>
-              <input type="text" placeholder="Give a nice title" name="title" class="form-control" #titleRef required ngModel #titleModelRef="ngModel"/>
+              <input type="text" placeholder="Give a nice title" [value]="ad.title" name="title" class="form-control" #titleRef  ngModel #titleModelRef="ngModel"/>
               <div *ngIf="titleModelRef.errors && titleModelRef.touched" class="alert alert-warning" style="margin-top:-12px; margin-bottom: 10px ;padding:1px; text-align:center;">
                             <div [hidden]="!titleModelRef.errors.required" > Please enter Title </div>
                    </div>         
@@ -15,7 +15,7 @@
               
               
               <div class="form-group">
-                <select class="form-control" name="sel1" #categoryRef ngModel required #categoryModelRef="ngModel">
+                <select class="form-control" [value]="ad.category" name="sel1" #categoryRef ngModel  #categoryModelRef="ngModel">
                    <option selected disabled>Select a Category</option>
                   <option *ngFor="let x of categories">{{x}}</option>
                   
@@ -23,12 +23,12 @@
               </div>
 
               
-              <textarea class="form-control" name = "desc" rows = "2" cols="48" placeholder="Add some description (<50 Words)" maxlength="500" style="resize: none;" #descriptionRef></textarea>
+              <textarea class="form-control"  name = "desc" rows = "2" cols="48" placeholder="Add some description (<50 Words)" maxlength="500" style="resize: none;" #descriptionRef>{{ad.description}}</textarea>
               
              
               
               
-              <button [disabled] = "!adForm.form.valid" class="btn btn-primary" style="margin-top: 30px;" (click) = "createAd(titleRef.value, categoryRef.value, descriptionRef.value)">Create my ad!</button>
+              <button [disabled] = "!adForm.form.valid" class="btn btn-primary" style="margin-top: 30px;" (click) = "editAd(titleRef.value, categoryRef.value, descriptionRef.value)">Edit my Ad</button>
               </form>
              <div [hidden]='!status'  class="alert alert-success" style="margin-top:10px; text-align:center"> Ad Posted Successfully! <br> Redirecting...</div>
       </div>
