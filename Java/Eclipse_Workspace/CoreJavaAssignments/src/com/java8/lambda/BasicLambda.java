@@ -1,0 +1,33 @@
+package com.java8.lambda;
+
+
+@FunctionalInterface
+interface MathOp<T extends Number> {
+
+	T test(T a, T b);
+		
+}
+
+
+public class BasicLambda {
+
+	public static void main(String[] args) {
+	
+		int x=5;
+		int y=5;
+		
+		MathOp<Integer> addition = (Integer a, Integer b) -> a+b; 
+		System.out.println(addition.test(x,y));
+		
+		MathOp<Integer> subtraction = (Integer a, Integer b) -> a-b; 
+		System.out.println(subtraction.test(x,y));
+		
+		MathOp<Integer> multiply = (Integer a, Integer b) -> a*b; 
+		System.out.println(multiply.test(x,y));
+		
+		MathOp<Integer> divide = (Integer a, Integer b) -> a/b; 
+		System.out.println(divide.test(x,y));
+		
+	}
+
+}
