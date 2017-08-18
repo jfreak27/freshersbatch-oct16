@@ -1,0 +1,214 @@
+package com.corejava.multithreading.balls;
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class OvalMovementTemplate extends Frame implements Runnable {
+
+	int y1;
+	int y2;
+	int y3;
+	
+	int flag1=0;
+	int flag2=0;
+	int flag3=0;
+	
+	static int reachFlag = 0;
+	
+	public OvalMovementTemplate() {
+		
+		super("Oval Game");
+		y1 = 400;
+		y2 = 400;
+		y3 = 400;
+		this.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+		
+		
+		Thread ball1 = new Thread(this);
+		ball1.setName("RedBall");
+		ball1.start();
+		
+		Thread ball2 = new Thread(this);
+		ball2.setName("GreenBall");
+		ball2.start();
+		
+		Thread ball3 = new Thread(this);
+		ball3.setName("BlueBall");
+		ball3.start();
+	}
+	
+	
+//	synchronized void reachedBall() {
+//		reachFlag++;
+//		System.out.println(reachFlag);
+//		try {
+//			wait();
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		if(reachFlag == 3) {
+//			reachFlag=0;
+//			System.out.println(reachFlag);
+//			notifyAll();
+//			
+//			
+//		}
+//	}
+	
+	synchronized void waitForAll() {
+		try {
+			wait();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	synchronized void notifyToAll() {
+		
+		notifyAll();
+	}
+	
+	public void run() {
+		
+		
+		if(Thread.currentThread().getName().equals("RedBall")) {
+			for( ; ; ) {
+				
+				if(reachFlag <4) {
+				if(flag1==0) {
+					for(int i=400;i>100;i--) {
+					try {
+						Thread.sleep(10);
+						} catch (InterruptedException e) {e.printStackTrace();}
+					y1 = i;
+					this.repaint();
+					if(i==101) {
+						flag1=1 ;
+						}
+				}
+				}}
+				
+				waitForAll();
+				
+				//try {wait();} catch (InterruptedException e1) {e1.printStackTrace();}
+				
+				
+			
+			if(flag1==1) {
+				
+				for(int i=100;i<400;i++) {
+					try {
+						Thread.sleep(10);
+						} catch (InterruptedException e) {e.printStackTrace();}
+					y1 = i;
+					this.repaint();
+					if(i==399) 
+						flag1=0 ;
+						
+				}
+				
+			}}
+		}
+			
+		
+		
+		
+		if(Thread.currentThread().getName().equals("GreenBall")) {
+			
+			for( ; ; ) {
+			if(flag2==0) {
+				for(int i=400;i>100;i--) {
+				try {
+					Thread.sleep(20);
+					} catch (InterruptedException e) {e.printStackTrace();}
+				y2 = i;
+				this.repaint();
+				if(i==101) {
+					flag2=1 ;
+					}
+			}
+			}
+			
+			reachedBall();
+			
+		
+			if(flag2==1) {
+				
+				for(int i=100;i<400;i++) {
+					try {
+						Thread.sleep(20);
+						} catch (InterruptedException e) {e.printStackTrace();}
+					y2 = i;
+					this.repaint();
+					if(i==399) 
+						flag2=0 ;
+						
+				}
+				
+			}
+			}
+		}
+		
+		
+		
+		if(Thread.currentThread().getName().equals("BlueBall")) {
+			
+			for( ; ; ) {
+			if(flag3==0) {
+				for(int i=400;i>100;i--) {
+				try {
+					Thread.sleep(15);
+					} catch (InterruptedException e) {e.printStackTrace();}
+				y3 = i;
+				this.repaint();
+				if(i==101) {
+					flag3=1 ;
+					}
+			}
+			}
+			
+			reachedBall();
+		
+		
+			if(flag3==1) {
+				
+				for(int i=100;i<400;i++) {
+					try {
+						Thread.sleep(15);
+						} catch (InterruptedException e) {e.printStackTrace();}
+					y3 = i;
+					this.repaint();
+					if(i==399) 
+						flag3=0 ;
+						
+				}
+				
+			}}
+		}
+		reachedBall();
+		
+	}
+	
+	public void paint(Graphics g) {
+		
+		
+		g.setColor(Color.RED);
+		g.fillOval(100, y1, 50, 50);
+		
+		
+		g.setColor(Color.GREEN);
+		g.fillOval(200, y2, 50, 50);
+		
+		
+		g.setColor(Color.BLUE);
+		g.fillOval(300, y3, 50, 50);
+	}
+	
+}

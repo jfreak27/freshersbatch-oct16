@@ -1,0 +1,24 @@
+package com.corejava.collections;
+
+class Person {
+	
+	private String name;
+	private int weight;
+	private int height;
+	
+	void setName(String name) {
+		this.name = name;
+	}
+	
+	void setHeight(int h) {
+		this.height = h;
+	}
+	
+	void setWeight(int w) {
+		this.weight= w;
+	}
+
+	
+	String getName() { return this.name }
+	
+}

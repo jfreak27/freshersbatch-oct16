@@ -1,0 +1,14 @@
+package com.corejava.collections;
+
+import java.util.HashSet;
+
+public class LinkedHashSet {
+
+		public static void main(String[] args) {
+			HashSet hs = new HashSet<Integer>();
+		}
+}
+
+
+
+

@@ -1,0 +1,12 @@
+package com.corejava.generics;
+import java.util.*;
+
+
+
+
+public class NumberListTest {
+
+	public static void printList(List<? extends Number> list) {
+		Iterator<? extends Number> itr = list.iterator();
+	}
+}

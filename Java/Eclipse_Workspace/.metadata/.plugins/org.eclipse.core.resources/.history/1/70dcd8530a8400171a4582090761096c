@@ -1,0 +1,13 @@
+package com.java8.filehandling;
+import java.io.*;
+
+
+public class CopyFileTest {
+
+	public static void main(String[] args) {
+		
+		File file1 = new File("ReadFrom.txt");
+		File file2 = new File("WriteTo.txt");
+	}
+		
+}

@@ -1,0 +1,22 @@
+package com.corejava.collections;
+import java.util.*;
+
+
+
+
+class Mall{
+	
+	Set<Set> parking = new HashSet<Set>();
+	Set<Set> floor = new HashSet<Set>();
+	Set<Set> section = new HashSet<Set>();
+	Set<Set> location = new HashSet<Set>();
+	
+	parking.add(floor1);
+}
+
+
+
+
+public class Parking {
+
+}

@@ -1,0 +1,11 @@
+package com.corejava.collections.chatrooms;
+
+import java.util.*;
+
+public class ChatRoom {
+
+	
+	String name;
+	int userCount;
+	List<User> userList = new ArrayList<User>();
+}

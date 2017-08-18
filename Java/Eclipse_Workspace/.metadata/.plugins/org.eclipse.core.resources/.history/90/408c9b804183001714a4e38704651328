@@ -1,0 +1,26 @@
+package com.java8.lambda;
+import java.util.*;
+
+
+public class KeyValueString extends Thread {
+
+	
+	KeyValueString(){
+		Map<Integer, String> map = new HashMap<Integer, String>();
+		
+		map.put(1,"Aditya");
+		map.put(2,"Rajo");
+		this.start();
+		
+		
+	}
+	public static void main(String[] args) {
+	
+		
+		
+		
+		
+
+	}
+
+}

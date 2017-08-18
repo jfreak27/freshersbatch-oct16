@@ -1,0 +1,11 @@
+package com.corejava.generics;
+import java.util.*;
+
+
+
+
+public class NumberListTest {
+
+	List<? extends Number> list = new ArrayList<? extends Number>();
+	
+}

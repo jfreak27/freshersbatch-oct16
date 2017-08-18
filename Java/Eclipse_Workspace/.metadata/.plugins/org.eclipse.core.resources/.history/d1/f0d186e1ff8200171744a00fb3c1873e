@@ -1,0 +1,28 @@
+package com.corejava.collections;
+import java.util.*;
+
+
+class Parked_CarOwner_Details{
+	
+	
+	String ownerName;
+	String carModel;
+	String carNo;
+	int ownerMobileNo;
+	String ownerAddress;
+}
+
+
+class Mall{
+	
+	
+	Set<HashMap> floors = new HashSet<HashMap>();
+	HashMap<Integer,ArrayList> floor1 = new HashMap<Integer,ArrayList>();
+}
+
+
+
+
+public class Parking {
+
+}

@@ -1,0 +1,47 @@
+package com.corejava.multithreading.executer;
+
+import java.util.concurrent.Callable;
+
+public class CalculationThread implements Callable<Boolean> {
+	
+	int y1;
+	int y2;
+	int x1;
+	int x2;
+
+    public CalculationThread(int y1, int y2, int x1, int x2) {
+        this.y1 = y1;
+        this.y2 = y2;
+        this.x1 = x1;
+        this.x2 = x2;
+    }
+
+    @Override
+    public Boolean call() throws Exception {
+    	if(y1 != y2 && x1 != x2) {
+			double slope = ((y2 - y1)*1.0) / (x2 - x1);
+			if (slope != 1.0 && slope != -1.0) {
+				return true;
+			}
+		}
+		return false;
+	}
+    
+}
+
+public static void main(String[] args) throws InterruptedException {
+    ExecutorService executorService = Executors.newFixedThreadPool(4);
+
+    Future<Integer> result = executorService.submit(new CalculationThread(3));
+
+    try {
+        Integer integer = result.get(10, TimeUnit.MILLISECONDS);
+        System.out.println("result: " + integer);
+    } catch (Exception e) {
+        // interrupts if there is any possible error
+        result.cancel(true);
+    }
+
+    executorService.shutdown();
+    executorService.awaitTermination(1, TimeUnit.SECONDS);
+}

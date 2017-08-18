@@ -1,0 +1,46 @@
+package com.corejava.collections;
+import java.util.*;
+
+
+class Floor{
+	
+	
+	int floorCount;
+	
+	Floor(int num){ this.floorCount = num;}
+	
+}
+
+class Mall{
+	
+	
+	
+	Set<Set> parking = new HashSet<Set>();
+	Set<Set> floor1 = new HashSet<Set>();
+	Set<Set> floor2 = new HashSet<Set>();
+	Set<Set> floor3 = new HashSet<Set>();
+	
+	ArrayList<Floor> floorList = new ArrayList<Floor>();
+	for(int i=0;i<3;i++) {
+		floorList[i] = new Floor(i+1);
+	}
+	
+	Set<Set> section = new HashSet<Set>();
+	Set<Set> location = new HashSet<Set>();
+	
+	Mall(){
+		
+		parking.add(floor1);
+		parking.add(floor2);
+		parking.add(floor3);
+		
+		
+	}
+}
+
+
+
+
+public class Parking {
+
+}

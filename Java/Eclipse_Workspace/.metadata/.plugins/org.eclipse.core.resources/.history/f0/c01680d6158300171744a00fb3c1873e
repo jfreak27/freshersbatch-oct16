@@ -1,0 +1,64 @@
+package com.corejava.collections;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+//import java.util.concurrent.CopyOnWriteArrayList;
+
+
+public class FailSafeTest {
+
+	public static void main(String[] args) {
+		boolean flag= true;
+		
+		
+		
+		ConcurrentHashMap<Integer, String> map = new ConcurrentHashMap<Integer, String>();
+		
+		map.put(105,"xyz");
+		map.put(106,"abc");
+		map.put(107,"def");
+		map.put(108,"vgg");
+		map.put(109,"dgh");
+		
+		
+		Iterator<Integer> itr = map.keySet().iterator();
+		
+		
+		
+		
+		while(itr.hasNext()) {
+			
+			if(flag)
+			{
+			
+				map.put(56,"asdsa");
+				map.put(25,"safaf");
+				map.put(18,"sda");
+				map.put(25,"safas");
+				flag= false;
+				
+			}
+			System.out.println(map.get(itr.next()));
+			
+			
+		}
+		
+		
+//			Iterator<Integer> itr1 = map.keySet().iterator();
+//		
+//		
+//		
+//		
+//		while(itr1.hasNext()) {
+//			
+//			
+//			System.out.println(map.get(itr1.next()));
+//
+//			
+//		}
+		
+		
+
+		
+	}
+
+}

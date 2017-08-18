@@ -1,0 +1,38 @@
+package com.corejava.collections;
+
+import java.util.HashMap;
+
+class Employee{
+	
+	
+	String name;
+	int id;
+	
+	Employee(String name, int id){
+		this.name = name;
+		this.id = id;
+	}
+	
+	@Override
+	public int hashCode() {
+		return 1;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		return true;
+	}
+}
+
+
+
+public class HashMapFailTest {
+
+	public static void main(String[] args) {
+		HashMap<Integer, Employee> hm = new HashMap<Integer, Employee>();
+		
+		hm.put(1,new Employee("Aditya",10));
+	}
+	
+	
+}

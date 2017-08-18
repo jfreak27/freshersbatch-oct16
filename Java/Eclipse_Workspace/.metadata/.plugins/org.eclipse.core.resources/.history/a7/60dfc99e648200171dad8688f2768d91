@@ -1,0 +1,49 @@
+package com.corejava.collections;
+
+import java.util.HashMap;
+
+class Employee{
+	
+	
+	String name;
+	int id;
+	
+	Employee(String name, int id){
+		this.name = name;
+		this.id = id;
+	}
+	
+	@Override
+	public int hashCode() {
+		return 1;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		return true;
+	}
+	
+	public String toString() {
+		return this.name;
+	}
+	
+}
+
+
+
+public class HashMapFailTest {
+
+	public static void main(String[] args) {
+		HashMap<Integer, Employee> hm = new HashMap<Integer, Employee>();
+		
+		hm.put(1,new Employee("Aditya",10));
+		hm.put(2,new Employee("Aditya1",0));
+		hm.put(3,new Employee("Aditya2",7));
+		
+		
+		System.out.println(hm.get(1).toString());
+		System.out.println(hm.size());
+	}
+	
+	
+}

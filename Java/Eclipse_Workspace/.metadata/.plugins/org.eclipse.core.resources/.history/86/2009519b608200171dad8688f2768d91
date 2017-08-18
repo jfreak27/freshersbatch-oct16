@@ -1,0 +1,33 @@
+package com.corejava.collections;
+
+class DateOfBirth{
+	
+	int date;
+	int month;
+	int year;
+	
+	public DateOfBirth(int d, int m, int y) {
+
+			date = d;
+			month = m;
+			year = y;
+		
+	}
+	
+	public int hashCode() {
+		return date;
+		
+	}
+	
+	@Override
+	public boolean equals(Person o) {
+		
+		if(this.date== o.date && this.month == o.month)
+	}
+}
+
+
+
+public class HashMapTest {
+
+}

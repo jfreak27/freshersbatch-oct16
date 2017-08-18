@@ -1,0 +1,13 @@
+package com.corejava.collections;
+import java.util.*;
+class Mall{
+	
+	Set floor = new Set();
+}
+
+
+
+
+public class Parking {
+
+}

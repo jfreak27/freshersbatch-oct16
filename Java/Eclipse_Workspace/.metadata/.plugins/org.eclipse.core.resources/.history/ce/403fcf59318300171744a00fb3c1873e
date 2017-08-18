@@ -1,0 +1,23 @@
+package com.java8.lambda;
+
+
+
+
+class Orders{
+	
+	int price;
+	String status;
+}
+public class OrderFilterTest {
+
+	
+	
+	
+	
+	public static void main(String[] args) {
+	
+		
+
+	}
+
+}

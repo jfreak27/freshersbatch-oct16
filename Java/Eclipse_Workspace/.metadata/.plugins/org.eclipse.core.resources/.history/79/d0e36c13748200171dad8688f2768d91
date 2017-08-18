@@ -1,0 +1,159 @@
+package com.corejava.collections.chatrooms;
+import java.util.*;
+
+public class ChatApplication {
+	static boolean isLoggedIn = false;
+	public static void main(String[] args) {
+		Scanner scr = new Scanner(System.in);
+		char choice = 'z';
+		
+		
+		HashMap<String, ChatRoom> chatRoomMap = new HashMap<String,ChatRoom>();
+		Set<User> userSet = new HashSet<User>();
+		
+		
+		String chatRoomName;
+		String message;
+		String userName;
+		
+		while(choice!='J') {
+		System.out.println("A) Create a Chatroom");
+		System.out.println("B) Add a User");
+		System.out.println("C) User Login");
+		System.out.println("D) Send Message");
+		System.out.println("E) Messages from Chatroom");
+		System.out.println("F) Users of Chatroom");
+		System.out.println("G) Logout");
+		System.out.println("H) Delete a user");
+		System.out.println("I) Delete a Chatroom");
+		System.out.println("J) Exit");
+		System.out.println("--------------------");
+		System.out.println("Enter your Choice : ");
+		choice = scr.next().toUpperCase().charAt(0);
+		
+		
+		switch(choice) {
+		
+		
+				case 'A' :	 System.out.println("Enter Name of Chatroom: ");
+							 chatRoomName = scr.next();
+							 chatRoomMap.put(chatRoomName, new ChatRoom(chatRoomName));
+							 System.out.println("ChatRoom Created!");
+							 break;
+							 
+				case 'B' : 	 System.out.println("Enter Username: ");
+							 userName = scr.next();
+							 userSet.add(new User(userName));
+							 System.out.println("User Added Successfully!");
+							 break;
+							 
+				case 'C' : 	 System.out.println("Enter Username: ");
+							 userName = scr.next();
+							 //User testUser = new User(userName);
+							 for(User x : userSet) {
+								System.out.println("entered");
+								 if(x.getName()==userName)
+								 {
+									 
+									 isLoggedIn =true;
+									 System.out.println("Login Successful!");
+									 break;
+								 }
+							 }
+							
+							System.out.println("User Not Found!");
+							 break;
+							 
+				case 'D' : 	 System.out.println("Enter Chatroom Name: ");
+							 chatRoomName = scr.next();
+							 
+							 if(!chatRoomMap.containsKey(chatRoomName))
+								 System.out.println("Chatroom Not Found!");
+							 else
+							 	{
+									 if(!isLoggedIn)
+									 {
+										 System.out.println("Please login first");
+										 break;
+									 }
+									 
+									 ChatRoom activeChatRoom = chatRoomMap.get(chatRoomName);
+									 System.out.println("Entered "+chatRoomName);
+									 System.out.println("Enter Message : ");
+									 activeChatRoom.addMessage(scr.next());
+									 System.out.println("Message added");
+									 
+								}
+							 break;
+							 
+				case 'E' : 	 System.out.println("Enter Chatroom Name: ");
+							 chatRoomName = scr.next();
+							 
+							 if(!chatRoomMap.containsKey(chatRoomName))
+							 	 System.out.println("Chatroom Not Found!");
+							 else
+							 	{
+									 if(!isLoggedIn)
+									 {
+										 System.out.println("Please login first");
+										 break;
+									 }
+									 
+									 ChatRoom activeChatRoom = chatRoomMap.get(chatRoomName);
+									 System.out.println("Messages from "+chatRoomName);
+									 Iterator<List> itr = activeChatRoom.getMessgeList().iterator();
+									 while(itr.hasNext()) {
+										 System.out.println(itr.next());
+									 }
+									 
+								}
+							 break;
+							 
+				case 'G':	 isLoggedIn = false;
+							 break;
+							  
+				case 'H':  	 System.out.println("Enter Username: ");
+							 if(userSet.contains(new User(scr.nextLine())))
+							 {	 userSet.remove(new User(scr.nextLine()));
+								 System.out.println("User Deleted!");
+							
+							 }
+							 else
+								 System.out.println("User Not Found!");
+							 break;
+							 
+				case 'J' : System.exit(0);
+							break;
+							
+				case '1' : System.out.println("Displaying ");
+							 Iterator it = chatRoomMap.entrySet().iterator();
+							    while (it.hasNext()) {
+							        Map.Entry pair = (Map.Entry)it.next();
+							        System.out.println(pair.getKey().toString() + " = " + pair.getValue().toString());
+							       
+							    }
+							    
+				case '2' : System.out.println("Displaying ");
+				 Iterator it1 = userSet.iterator();
+				    while (it1.hasNext()) {
+				        
+				        System.out.println(it1.next().toString());
+				       
+				    }
+				}
+				
+											
+								 
+			}
+									 
+		}}
+		
+		
+		
+		
+
+	
+	
+	
+
+

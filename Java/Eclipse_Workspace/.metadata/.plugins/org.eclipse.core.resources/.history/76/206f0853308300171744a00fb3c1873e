@@ -1,0 +1,12 @@
+package com.java8.lambda;
+
+
+public class BasicLambda {
+
+	public static void main(String[] args) {
+	
+
+		MathOp addition = (int a, int b) -> a+b; 
+	}
+
+}

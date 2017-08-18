@@ -1,0 +1,8 @@
+package com.java8.lambda;
+
+@FunctionalInterface
+public interface MathOp<T> {
+
+	T test(T a, T b);
+		
+}

@@ -1,0 +1,12 @@
+package com.java8.filehandling;
+import java.io.*;
+
+
+public class CopyFileTest {
+
+	public static void main(String[] args) {
+		
+		
+	}
+		
+}

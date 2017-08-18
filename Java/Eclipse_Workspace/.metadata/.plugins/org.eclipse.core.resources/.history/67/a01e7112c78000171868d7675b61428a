@@ -1,0 +1,20 @@
+package com.corejava.multithreading;
+
+import java.awt.Color;
+import java.awt.Frame;
+
+import com.corejava.multithreading.watertank.WaterTank;
+
+public class AnimationRunnerWaterTank {
+
+
+	public static void main(String[] args) {
+		Frame mf = new WaterTank();
+		mf.setSize(500, 500);
+		mf.setVisible(true);
+	}
+	
+	
+	}
+
+

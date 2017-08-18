@@ -1,0 +1,26 @@
+package com.java8.lambda;
+import java.util.*;
+import java.util.function.*;
+
+public class RemoveOddTest {
+
+	public static void main(String[] args) {
+		List<String> list = new ArrayList<String>();
+		list.add("EVEN");
+		list.add("ODD");
+		list.add("EVENWORD");
+		list.add("ODDWORD");
+		
+		
+		for(int i=0; i<list.size();i++) {
+			System.out.println(list.get(i));
+		}
+		
+		
+	}
+		
+	
+		
+	
+	
+}

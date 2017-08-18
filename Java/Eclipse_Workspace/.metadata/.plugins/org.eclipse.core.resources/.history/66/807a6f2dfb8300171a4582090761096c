@@ -1,0 +1,89 @@
+package com.java8.streams;
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.*;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+	//testFruitList();	
+	//testNews();
+	testTransactions();
+	
+	}
+
+	static void testFruitList(){
+		List<Fruit> fruitList = new ArrayList<Fruit>();
+		fruitList = TestData.getAllFruits();
+		
+		
+		//1. Display the fruit names of low calories fruits i.e. calories < 100 sorted in descending order of calories.
+		System.out.println("Fruits with calories less than 100 in descending order");
+		List<Fruit> filteredFruitList = fruitList.stream().filter((Fruit f) -> f.getCalories() < 100)
+				.sorted(Comparator.comparing(Fruit::getCalories).reversed())
+				.collect(toList());
+		filteredFruitList.stream().forEach(System.out::println);		
+		System.out.println("");
+		
+		
+		//2. Display color wise list of fruits.
+		System.out.println("Color wise list of fruits");
+		Map<String, List<Fruit>> colorWiseFruitMap = fruitList.stream().collect(groupingBy(Fruit::getColor));
+		colorWiseFruitMap.entrySet().stream().forEach(System.out::println);	
+		System.out.println("");
+		
+		//3. Display only RED color fruits sorted as per their price in ascending order.
+		System.out.println("Red colored fruits in ascending order");
+		List<Fruit> redFruitList = fruitList.stream().filter((Fruit f) -> f.getColor()=="Red").
+				sorted(Comparator.comparing(Fruit::getPrice)).
+				collect(toList());
+		redFruitList.stream().forEach(System.out::println);
+		System.out.println("");
+		
+		
+	}
+
+	static void testNews() {
+		
+		List<News> newsList = new ArrayList<News>();
+		newsList = TestData.getAllNews();
+		
+		//4.	Find out the newsId which has received maximum comments.
+		int newsId = newsList.stream().collect(groupingBy(News::getNewsId, counting())).entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey();
+		System.out.println("News ID with max Comments : "+newsId);
+		
+		//5.	Find how many times budget arrived
+		long budgetCount = newsList.stream().filter((News n) -> n.getComment().contains("budget")).count();
+		System.out.println("Nuber of Times BUDGET in comments : "+budgetCount);
+		System.out.println("");
+		
+		
+		//6. Comment By user wise number of components.
+		newsList.stream().collect(groupingBy(News::getCommentByUser, counting())).entrySet().forEach(System.out::println);
+		
+	}
+	
+	static void testTransactions() {
+		
+		List<Transaction> transactionList = TestData.getAllTransactions();
+		
+		//7.	Find all transactions in the year 2011 
+		transactionList.stream().filter((Transaction t) -> t.getYear()==2011).sorted(Comparator.comparing(Transaction::getValue)).forEach(System.out::println);
+	
+		//8.	What are all the unique cities where the traders work?
+		transactionList.stream().map((Transaction t) -> t.getTrader().getCity()).distinct().forEach(System.out::println);
+	
+		// 9.	Find all traders from Pune and sort them by name.
+		transactionList.stream().filter((Transaction t)-> t.getTrader().getCity().equals("Pune")).sorted(Comparator.comparing((Transaction t)-> t.getTrader().getName())).forEach(System.out::println);
+	
+		//10 .	Return a string of all traders’ names sorted alphabetically.
+		String str = transactionList.stream().map((Transaction t)-> t.getTrader().getName()).collect(toList()).toString();
+		
+		
+	}
+	
+}

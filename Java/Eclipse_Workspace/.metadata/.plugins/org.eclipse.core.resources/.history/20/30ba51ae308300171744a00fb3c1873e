@@ -1,0 +1,24 @@
+package com.java8.lambda;
+
+
+@FunctionalInterface
+interface MathOp<T extends Number> {
+
+	T test(T a, T b);
+		
+}
+
+
+public class BasicLambda {
+
+	public static void main(String[] args) {
+	
+		int a=5;
+		int b=5;
+		
+		MathOp<Integer> addition = (Integer a, Integer b) -> a+b; 
+		
+		
+	}
+
+}

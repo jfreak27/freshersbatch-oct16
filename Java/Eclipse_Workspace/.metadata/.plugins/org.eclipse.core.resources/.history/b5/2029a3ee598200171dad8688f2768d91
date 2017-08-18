@@ -1,0 +1,9 @@
+package com.corejava.collections;
+
+class Person {
+	
+	String name;
+	int weight;
+	int height;
+
+}

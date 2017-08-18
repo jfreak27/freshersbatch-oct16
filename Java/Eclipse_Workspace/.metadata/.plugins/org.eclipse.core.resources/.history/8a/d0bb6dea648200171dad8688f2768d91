@@ -1,0 +1,5 @@
+package com.corejava.collections.chatrooms;
+
+public class ChatRoom {
+
+}

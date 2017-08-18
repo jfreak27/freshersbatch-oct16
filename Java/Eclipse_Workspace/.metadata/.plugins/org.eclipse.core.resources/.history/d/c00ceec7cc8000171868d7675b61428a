@@ -1,0 +1,121 @@
+package com.corejava.multithreading;
+
+
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowAdapter;
+
+public class WaterTank extends Frame {
+
+	public WaterTank() {
+		super("Ball game");
+		setBackground(Color.CYAN);
+		setSize(500, 500);
+		setVisible(true);
+		this.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+	}
+		
+	public void paint(Graphics g) {
+		g.drawRect(150, 100, 200, 300);
+		g.setColor(Color.RED);
+		g.fillRect(150, 200, 200, 200);
+		g.drawString("70%", 380, 200);
+	}
+
+	
+}
+
+
+
+
+
+
+
+
+class Tank implements Runnable{
+	
+	
+	Thread inlet;
+	Thread outlet;
+	Thread controller;
+	private static int  waterLevel;
+	
+	Tank(){
+		
+		waterLevel = 0;
+		
+		controller = new Thread(this);
+		controller.setName("CONTROLLER");
+		controller.setDaemon(true);
+		controller.start();
+		
+		
+		inlet = new Thread(this);
+		inlet.setName("INLET");
+		inlet.start();
+		
+		
+		outlet = new Thread(this);
+		outlet.setName("OUTLET");
+		outlet.start();
+		
+		
+		
+		}
+	
+	
+	
+	
+	@SuppressWarnings("deprecation")
+	public void run() {
+		
+		if(Thread.currentThread().getName().equals("INLET")) {
+			for( ; ; ) {
+					waterLevel = waterLevel + 50;
+					try{ Thread.sleep(500);} catch (Exception E) {}
+					System.out.println("Filling :" + waterLevel);
+					mf.repaint();
+			}
+					
+			}
+		
+		
+		if(Thread.currentThread().getName().equals("OUTLET")) {
+			for( ; ; ) {
+					waterLevel = waterLevel - 70;
+					try{ Thread.sleep(500);} catch (Exception E) {}
+					System.out.println("Spilling :" + waterLevel);
+			}
+		}
+		
+		if(Thread.currentThread().getName().equals("CONTROLLER")) {
+			for( ; ; ) {
+					if(waterLevel < 800) 
+					{	
+						outlet.suspend();
+						inlet.resume();
+						
+					}
+					
+					if(waterLevel > 800) 
+					{	
+						inlet.suspend();	
+						outlet.resume();
+						
+					}
+					
+			}
+		}
+		
+	
+	
+	}
+	
+}
+

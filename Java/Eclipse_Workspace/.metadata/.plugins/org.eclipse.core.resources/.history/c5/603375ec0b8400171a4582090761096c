@@ -1,0 +1,24 @@
+package com.java8.filehandling;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.attribute.BasicFileAttributes;
+
+
+public class CopyFileTest {
+
+	public static void main(String[] args) throws IOException {
+		
+		File file1 = new File("ReadFile.txt");
+		File file2 = new File("WriteTo.txt");
+		
+		BasicFileAttributes attr = Files.readAttributes(file1, BasicFileAttributes.class);
+		String name = file1.getName();
+		long size = file1.getTotalSpace();
+		boolean canRead = file1.canRead();
+		boolean canWrite = file1.canWrite();
+		boolean canExecute = file1.canExecute();
+		boolean isDir = file1.isDirectory();
+		boolean isFile = file1.isFile();
+		
+		
+}

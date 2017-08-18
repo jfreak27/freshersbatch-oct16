@@ -1,0 +1,10 @@
+package com.java8.lambda;
+import java.util.*;
+import java.util.function.*;
+
+
+public class KeyValueString {
+
+
+
+}

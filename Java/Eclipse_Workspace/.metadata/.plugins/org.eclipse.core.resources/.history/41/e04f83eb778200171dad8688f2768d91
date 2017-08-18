@@ -1,0 +1,14 @@
+package com.corejava.collections;
+import java.util.*;
+
+class Mall{
+	
+	Set floor = new HashSet();
+}
+
+
+
+
+public class Parking {
+
+}

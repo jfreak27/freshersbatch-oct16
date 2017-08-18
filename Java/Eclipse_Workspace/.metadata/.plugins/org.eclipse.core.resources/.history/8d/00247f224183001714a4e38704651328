@@ -1,0 +1,13 @@
+package com.java8.lambda;
+import java.util.*;
+
+
+public class KeyValueString {
+
+	public static void main(String[] args) {
+	
+		Map<Integer, String> map = new HashMap<Integer, String>();
+
+	}
+
+}

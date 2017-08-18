@@ -1,0 +1,51 @@
+package com.corejava.collections;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
+
+
+public class FailSafeTest {
+
+	public static void main(String[] args) {
+		
+		boolean flag= true;
+		
+		
+		
+		ConcurrentHashMap<Integer, String> map = new ConcurrentHashMap<>();
+		
+		map.put(105,"xyz");
+		map.put(106,"abc");
+		
+		
+		
+		Iterator<String> itr = map.values().iterator();
+		
+		while(itr.hasNext()) {
+			
+			
+			if(flag)
+			{
+			
+				map.put(56,"asdsa");
+				map.put(21,"abx");
+				flag= false;
+				
+			}
+			System.out.println(itr.next());
+				
+			
+		}
+		
+		System.out.println("New Iterator");
+		itr = map.values().iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+		
+		
+
+		
+	}
+
+}

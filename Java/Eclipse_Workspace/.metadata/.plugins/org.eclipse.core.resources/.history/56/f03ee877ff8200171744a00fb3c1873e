@@ -1,0 +1,17 @@
+package com.corejava.collections;
+import java.util.*;
+
+
+
+class Mall{
+	
+	
+	Set<HashMap> floors = new HashSet<HashMap>();
+}
+
+
+
+
+public class Parking {
+
+}

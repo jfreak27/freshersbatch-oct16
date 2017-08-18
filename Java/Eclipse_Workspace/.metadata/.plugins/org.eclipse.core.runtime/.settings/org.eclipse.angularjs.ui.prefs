@@ -1,0 +1,10 @@
+angularExpression=\#FFC600 | \#202425 | null | null | null | null
+angularExpressionBorder=\#D8D8D8 | \#202425 | null | null | null | null
+directiveName=\#8DCBE2 | \#202425 | null | null | null | null
+directiveParameterName=\#BED6FF | \#202425 | null | null | null | null
+eclipse.preferences.version=1
+overriddenByCSS=,directiveParameterName,angularExpression,directiveName,angularExpressionBorder,
+predarkestdark.angularExpression=\#DC78DC | null | null | null | null | null
+predarkestdark.angularExpressionBorder=\#D0D0D0 | null | null | null | null | null
+predarkestdark.directiveName=\#00D0D0 | null | null | null | null | null
+predarkestdark.directiveParameterName=\#BED6FF | null | null | null | null | null

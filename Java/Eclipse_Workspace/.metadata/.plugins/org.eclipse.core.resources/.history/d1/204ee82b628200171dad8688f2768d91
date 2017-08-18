@@ -1,0 +1,13 @@
+package com.corejava.collections;
+
+
+
+class Employee{
+	
+	
+	String name;
+	
+}
+public class HashMapFailTest {
+
+}

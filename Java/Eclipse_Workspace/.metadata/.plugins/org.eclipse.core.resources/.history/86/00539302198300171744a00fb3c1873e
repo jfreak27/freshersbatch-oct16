@@ -1,0 +1,14 @@
+package com.corejava.generics;
+import java.util.*;
+
+
+
+
+public class NumberListTest {
+
+	public static void printList(List<? extends Number> list) {
+		for (int i = 1; i <= 10; i++) {
+		list.add(i);
+		}
+	}
+}

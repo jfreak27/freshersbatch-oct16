@@ -1,0 +1,14 @@
+package com.corejava.generics;
+import java.util.*;
+
+
+
+
+public class NumberListTest {
+
+	List<? extends Number> list;
+	
+	
+	list = new List<Float>;
+	
+}

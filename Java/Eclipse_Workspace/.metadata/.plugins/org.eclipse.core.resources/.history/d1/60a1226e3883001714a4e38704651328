@@ -1,0 +1,61 @@
+package com.java8.lambda;
+
+import java.util.*;
+import java.util.function.*;
+
+class Order{
+	
+	int price;
+	String status;
+	
+	Order(int price, String status){
+		this.price = price;
+		this.status = status;
+		
+	}
+	
+	
+	public int getPrice() {
+		return price;
+	}
+	public String getStatus() {
+		return status;
+	}
+	
+	
+}
+
+
+public class OrderFilterTest {
+
+	List<Order> orderList = new ArrayList<Order>();
+	
+	public OrderFilterTest() {
+	
+		for(int i=0;i<50;i++) {
+			int random = (int)(Math.random() * ((7000 - 13000) + 1) + 70000);
+			String status = (random%2==0?"ACCEPTED":"REJECTED");
+			orderList.add(new Order(random, status));
+		}
+		
+		
+	final List<Order> filterOrders(List<Order> orders, Predicate priceFilter ) {
+			for(Order order: orders) {
+				if (predicate.test(transaction)) {
+						myTransactions.add(transaction);
+				} 
+			}
+			return myTransactions;
+			}
+			
+	}
+	
+	
+	public static void main(String[] args) {
+
+	Predicate<Order> priceFilter = (Order order) -> order.price > 10000;
+	Predicate<Order> statusFilter = (Order order) -> order.status == "ACCEPTED" || order.status == "REJECTED";
+
+	}
+
+}

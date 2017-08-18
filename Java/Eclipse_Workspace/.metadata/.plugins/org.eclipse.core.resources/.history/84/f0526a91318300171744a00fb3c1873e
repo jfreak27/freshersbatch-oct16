@@ -1,0 +1,44 @@
+package com.java8.lambda;
+
+
+
+
+class Order{
+	
+	int price;
+	String status;
+	
+	Order(int price, String status){
+		this.price = price;
+		this.status = status;
+		
+	}
+	
+	
+	public int getPrice() {
+		return price;
+	}
+	public String getStatus() {
+		return status;
+	}
+	
+	
+}
+
+
+public class OrderFilterTest {
+
+	List<Order> orderList = new ArrayList<Order>();
+	public OrderFilterTest() {
+	
+		for(int i=0;i<50;i++) {
+			
+		}
+	}
+	public static void main(String[] args) {
+	
+		
+
+	}
+
+}

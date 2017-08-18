@@ -1,0 +1,10 @@
+package com.java8.lambda;
+import java.util.*;
+
+
+public class RemoveOddTest {
+
+		List<String> list = new List<String>();
+	
+	
+}

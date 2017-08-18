@@ -1,0 +1,91 @@
+package com.corejava.collections;
+
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.TreeSet;
+
+class Person {
+	
+	private String name;
+	private int weight;
+	private int height;
+	
+	Person(String name, int h, int w){
+
+		this.height = h;
+		this.weight = w;
+		this.name = name;
+	}
+
+
+	
+
+	public int getHeight(){ return this.height; }
+	public int getWeight(){ return this.weight; }
+	public String  getName(){ return this.name; }
+	
+	
+
+	public String toString(){
+		return this.name + " " + this.height + " " + this.weight;
+	}
+}
+
+
+
+class WeightComparator implements Comparator{
+
+
+	public int compare(Object o1, Object o2){
+
+		Person p1 = (Person)o1;
+		Person p2 = (Person)o2;
+
+		if(p1.getWeight() > p2.getWeight())
+			return 1;
+
+		else if (p1.getWeight() < p2.getWeight())
+			return -1;
+
+		else
+			{
+			if(p1.getHeight() > p2.getHeight())
+				return 1;
+
+			else if (p1.getHeight() < p2.getHeight())
+				return -1;
+
+			else
+				return 0;
+			
+			
+			}
+	}
+}
+
+
+
+
+public class TestTreeSet{
+	
+	
+	public static void main(String[] args) {
+		Person p1 = new Person("Aditya",182,56);
+		Person p2 = new Person("Navi",190,54);
+		Person p3 = new Person("Rajo",162,66);
+		
+		TreeSet<Person> set = new TreeSet<Person>();
+		
+
+		set.add(p1);
+		set.add(p2);
+		set.add(p3);
+		
+		
+		Iterator<Person> itr = set.iterator();
+	}
+	
+	
+}
+
+

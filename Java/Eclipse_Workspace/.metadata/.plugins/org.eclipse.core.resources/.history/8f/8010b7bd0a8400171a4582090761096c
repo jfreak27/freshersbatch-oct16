@@ -1,0 +1,25 @@
+package com.java8.filehandling;
+import java.io.*;
+
+
+public class CopyFileTest {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		
+		File file1 = new File("ReadFrom.txt");
+		File file2 = new File("WriteTo.txt");
+		
+		FileInputStream readFile = new FileInputStream(file1);
+		FileOutputStream writeFile = new FileOutputStream(file2,true);
+		
+		int i=0;
+		
+		do {
+			
+			i=readFile.read();
+			if(i!=-1)
+				writeFile.write(i);
+		}while(i!=-1);
+	}
+		
+}
